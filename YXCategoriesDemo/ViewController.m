@@ -18,13 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    /**
+     pod spec lint
+     pod trunk push YXCategories.podspec --allow-warnings
+     
+     */
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 
 @end

@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.name         = "YXCategories"
   s.version      = "1.0.0"
   s.summary      = "A category only use own"
-  s.homepage     = "https://github.com/shlyren/YXCategories.git"
+  s.homepage     = "https://yuxiang.ren"
   s.license      = "MIT"
   s.author       = { "shlyren" => "shlyren@163.com" }
   s.platform     = :ios, "8.0"
