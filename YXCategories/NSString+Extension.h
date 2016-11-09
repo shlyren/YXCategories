@@ -30,6 +30,12 @@
  */
 - (BOOL)checkPhone;
 
+/**
+ 验证金额是否合法 支持0 0.0 0.00 两位小数
+ 
+ @return boolean
+ */
+- (BOOL)checkMoney;
 
 /**
  获取今年的字符串
@@ -38,6 +44,12 @@
  */
 + (NSString *)currentYearStr;
 
+/**
+ 获取当前时间戳
+ 
+ @return 当前的时间戳
+ */
++ (long)getCurrentDateLong;
 
 /**
  md5 加密

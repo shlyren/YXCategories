@@ -21,6 +21,11 @@
 		55B2B3DB1DCAFAD400197A38 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B2B3D11DCAFAD400197A38 /* UIScrollView+Extension.m */; };
 		55B2B3DC1DCAFAD400197A38 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B2B3D31DCAFAD400197A38 /* UIView+Extension.m */; };
 		55B2B3DD1DCAFAD400197A38 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B2B3D51DCAFAD400197A38 /* UIView+Frame.m */; };
+		55F028911DD3178B009C0F73 /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028901DD3178B009C0F73 /* UITableView+Extension.m */; };
+		55F028941DD317A5009C0F73 /* UICollectionView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028931DD317A5009C0F73 /* UICollectionView+Extension.m */; };
+		55F028971DD317BE009C0F73 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028961DD317BE009C0F73 /* UIBarButtonItem+Extension.m */; };
+		55F0289A1DD317F7009C0F73 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028991DD317F7009C0F73 /* UIViewController+Extension.m */; };
+		55F0289D1DD3181F009C0F73 /* NSBundle+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F0289C1DD3181F009C0F73 /* NSBundle+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,17 @@
 		55B2B3D31DCAFAD400197A38 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		55B2B3D41DCAFAD400197A38 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		55B2B3D51DCAFAD400197A38 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		55F0288F1DD3178B009C0F73 /* UITableView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extension.h"; sourceTree = "<group>"; };
+		55F028901DD3178B009C0F73 /* UITableView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extension.m"; sourceTree = "<group>"; };
+		55F028921DD317A5009C0F73 /* UICollectionView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Extension.h"; sourceTree = "<group>"; };
+		55F028931DD317A5009C0F73 /* UICollectionView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Extension.m"; sourceTree = "<group>"; };
+		55F028951DD317BE009C0F73 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		55F028961DD317BE009C0F73 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		55F028981DD317F7009C0F73 /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
+		55F028991DD317F7009C0F73 /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
+		55F0289B1DD3181F009C0F73 /* NSBundle+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Extension.h"; sourceTree = "<group>"; };
+		55F0289C1DD3181F009C0F73 /* NSBundle+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Extension.m"; sourceTree = "<group>"; };
+		55F0289F1DD31C20009C0F73 /* YXCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXCategories.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +123,15 @@
 		55B2B3C51DCAFAD400197A38 /* YXCategories */ = {
 			isa = PBXGroup;
 			children = (
+				55F0289F1DD31C20009C0F73 /* YXCategories.h */,
+				55F0289B1DD3181F009C0F73 /* NSBundle+Extension.h */,
+				55F0289C1DD3181F009C0F73 /* NSBundle+Extension.m */,
+				55F028921DD317A5009C0F73 /* UICollectionView+Extension.h */,
+				55F028931DD317A5009C0F73 /* UICollectionView+Extension.m */,
+				55F0288F1DD3178B009C0F73 /* UITableView+Extension.h */,
+				55F028901DD3178B009C0F73 /* UITableView+Extension.m */,
+				55F028951DD317BE009C0F73 /* UIBarButtonItem+Extension.h */,
+				55F028961DD317BE009C0F73 /* UIBarButtonItem+Extension.m */,
 				55B2B3C61DCAFAD400197A38 /* NSString+Extension.h */,
 				55B2B3C71DCAFAD400197A38 /* NSString+Extension.m */,
 				55B2B3C81DCAFAD400197A38 /* NSUserDefaults+Extension.h */,
@@ -123,6 +148,8 @@
 				55B2B3D31DCAFAD400197A38 /* UIView+Extension.m */,
 				55B2B3D41DCAFAD400197A38 /* UIView+Frame.h */,
 				55B2B3D51DCAFAD400197A38 /* UIView+Frame.m */,
+				55F028981DD317F7009C0F73 /* UIViewController+Extension.h */,
+				55F028991DD317F7009C0F73 /* UIViewController+Extension.m */,
 			);
 			path = YXCategories;
 			sourceTree = "<group>";
@@ -200,15 +227,20 @@
 			files = (
 				55B2B3DC1DCAFAD400197A38 /* UIView+Extension.m in Sources */,
 				554694D31DCADC45004CCF43 /* ViewController.m in Sources */,
+				55F0289D1DD3181F009C0F73 /* NSBundle+Extension.m in Sources */,
 				55B2B3D81DCAFAD400197A38 /* UIButton+Extension.m in Sources */,
+				55F0289A1DD317F7009C0F73 /* UIViewController+Extension.m in Sources */,
 				554694D01DCADC45004CCF43 /* AppDelegate.m in Sources */,
 				55B2B3DB1DCAFAD400197A38 /* UIScrollView+Extension.m in Sources */,
 				55B2B3D91DCAFAD400197A38 /* UIColor+Extension.m in Sources */,
+				55F028941DD317A5009C0F73 /* UICollectionView+Extension.m in Sources */,
 				554694CD1DCADC45004CCF43 /* main.m in Sources */,
+				55F028971DD317BE009C0F73 /* UIBarButtonItem+Extension.m in Sources */,
 				55B2B3D71DCAFAD400197A38 /* NSUserDefaults+Extension.m in Sources */,
 				55B2B3D61DCAFAD400197A38 /* NSString+Extension.m in Sources */,
 				55B2B3DA1DCAFAD400197A38 /* UIImage+Extension.m in Sources */,
 				55B2B3DD1DCAFAD400197A38 /* UIView+Frame.m in Sources */,
+				55F028911DD3178B009C0F73 /* UITableView+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

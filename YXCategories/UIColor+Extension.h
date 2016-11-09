@@ -35,4 +35,13 @@
  @return 颜色
  */
 + (UIColor *)colorWithHexString:(NSString *)color;
+
+
+/**
+ 将UIColor 转为十六进制
+
+ @return 十六进制字符串
+ */
+- (NSString *)hex;
+
 @end

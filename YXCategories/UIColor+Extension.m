@@ -9,7 +9,39 @@
 #import "UIColor+Extension.h"
 
 @implementation UIColor (Extension)
+/**
+ 由颜色生成图片
+ 
+ @return 生成的图片
+ */
+- (UIImage *)image
+{
+    // 描述矩形
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    
+    // 开启位图上下文
+    UIGraphicsBeginImageContext(rect.size);
+    // 获取位图上下文
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    // 使用color演示填充上下文
+    CGContextSetFillColorWithColor(context, self.CGColor);
+    // 渲染上下文
+    CGContextFillRect(context, rect);
+    // 从上下文中获取图片
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    // 结束上下文
+    UIGraphicsEndImageContext();
+    
+    return theImage;
+}
 
+/**
+ 从十六进制字符串获取颜色，
+ @param color 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
+ @param alpha 透明度
+ 
+ @return 颜色
+ */
 + (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha
 {
     //删除字符串中的空格
@@ -57,37 +89,44 @@
     return [UIColor colorWithRed:((CGFloat)r / 255.0f) green:((CGFloat)g / 255.0f) blue:((CGFloat)b / 255.0f) alpha:alpha];
 }
 
-//默认alpha值为1
+/**
+ 从十六进制字符串获取颜色， alpha == 1.0f
+ @param color 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
+ 
+ @return 颜色
+ */
 + (UIColor *)colorWithHexString:(NSString *)color
 {
     return [self colorWithHexString:color alpha:1.0f];
 }
 
+
 /**
- 由颜色生成图片
+ 将UIColor 转为十六进制
  
- @return 生成的图片
+ @return 十六进制字符串
  */
-- (UIImage *)image
+- (NSString *)hex
 {
-    // 描述矩形
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIColor *color = self;
     
-    // 开启位图上下文
-    UIGraphicsBeginImageContext(rect.size);
-    // 获取位图上下文
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    // 使用color演示填充上下文
-    CGContextSetFillColorWithColor(context, self.CGColor);
-    // 渲染上下文
-    CGContextFillRect(context, rect);
-    // 从上下文中获取图片
-    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
-    // 结束上下文
-    UIGraphicsEndImageContext();
+    if (CGColorGetNumberOfComponents(color.CGColor) < 4)
+    {
+        const CGFloat *components = CGColorGetComponents(color.CGColor);
+        color = [UIColor colorWithRed:components[0]
+                                green:components[0]
+                                 blue:components[0]
+                                alpha:components[1]];
+    }
     
-    return theImage;
+    if (CGColorSpaceGetModel(CGColorGetColorSpace(color.CGColor)) != kCGColorSpaceModelRGB)
+    {
+        return [NSString stringWithFormat:@"#FFFFFF"];
+    }
     
+    return [NSString stringWithFormat:@"#%d%d%d", (int)((CGColorGetComponents(color.CGColor))[0]*255.0),
+            (int)((CGColorGetComponents(color.CGColor))[1]*255.0),
+            (int)((CGColorGetComponents(color.CGColor))[2]*255.0)];
 }
 
 

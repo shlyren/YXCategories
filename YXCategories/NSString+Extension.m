@@ -10,11 +10,19 @@
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (Extension)
+/**
+ *  计算当前字符串显示所需的实际frame，返回值的x = 0, y = 0
+ */
 
 - (CGRect)textRectWithSize:(CGSize)size attributes:(NSDictionary *)attributes{
     return [self boundingRectWithSize:size options:  NSStringDrawingUsesLineFragmentOrigin attributes: attributes context: nil];
 }
 
+/**
+ *  判断字符串是否为空
+ *
+ *  @return boolean
+ */
 - (BOOL)isBlankString
 {
     if (self == nil || self == NULL) {
@@ -27,6 +35,31 @@
         return YES;
     }
     return NO;
+}
+/**
+ 判断字符串是否为电话号码(移动,电信,联通)
+ 
+ @return 是否合法
+ */
+- (BOOL)checkMoney
+{
+    NSString *str = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+    if (!str.length) return true;
+    
+    NSString *regex = @"^(([0-9]|([1-9][0-9]{0,9}))((\\.[0-9]{0,2})?))$";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    BOOL isMatch = [pred evaluateWithObject:str];
+    return isMatch;
+}
+
+/**
+ 获取当前时间戳
+ 
+ @return 当前的时间戳
+ */
++ (long)getCurrentDateLong
+{
+    return [[NSDate date] timeIntervalSince1970] * 1000;
 }
 
 /**
@@ -65,6 +98,11 @@
     //    return (res1 || res2 || res3 || res4);
 }
 
+/**
+ 获取今年的字符串
+ 
+ @return 今年字符串
+ */
 + (NSString *)currentYearStr
 {
     NSDateFormatter *formatter = [NSDateFormatter new];
@@ -72,6 +110,11 @@
     return [formatter stringFromDate:[NSDate date]];
 }
 
+/**
+ md5 加密
+ 
+ @return 加密后的字符串
+ */
 - (NSString *)md5
 {
     const void *cStr = [self UTF8String];
