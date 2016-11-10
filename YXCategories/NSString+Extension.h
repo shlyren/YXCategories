@@ -7,9 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 @interface NSString (Extension)
+
+/**
+ 时间戳 -> yyy-MM-dd HH:mm
+ */
+@property (nonatomic, copy, readonly) NSString *formatDate;
+
+/**
+ 去掉空格
+ */
+@property (nonatomic, strong, readonly) NSString *stringByTrim;
 
 /**
  *  计算当前字符串显示所需的实际frame，返回值的x = 0, y = 0
@@ -18,43 +28,31 @@
 
 /**
  *  判断字符串是否为空
- *
- *  @return boolean
  */
-- (BOOL)isBlankString;
+@property (nonatomic, assign, readonly, getter=isBlankString) BOOL blankString;
 
 /**
  判断字符串是否为电话号码(移动,电信,联通)
- 
- @return 是否合法
  */
-- (BOOL)checkPhone;
+@property (nonatomic, assign, readonly, getter=isPhoneNum) BOOL phoneNum;
 
 /**
  验证金额是否合法 支持0 0.0 0.00 两位小数
- 
- @return boolean
  */
-- (BOOL)checkMoney;
+@property (nonatomic, assign, readonly, getter=isMoney) BOOL money;
 
 /**
  获取今年的字符串
- 
- @return 今年字符串
  */
-+ (NSString *)currentYearStr;
+@property (class, nonatomic, strong, readonly) NSString *currentYear;
 
 /**
  获取当前时间戳
- 
- @return 当前的时间戳
  */
-+ (long)getCurrentDateLong;
+@property (class, nonatomic, assign, readonly) long UnixTime;
 
 /**
  md5 加密
-
- @return 加密后的字符串
  */
-- (NSString *)md5;
+@property (nonatomic, strong, readonly) NSString *md5;
 @end

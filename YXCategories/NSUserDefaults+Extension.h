@@ -15,9 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setObject:(id)value forKey:(NSString *)defaultName;
 + (nullable id)objectForKey:(NSString *)defaultName;
 
-
 + (void)removeObjectForKey:(NSString *)defaultName;
-
 
 + (void)setInteger:(NSInteger)value forKey:(NSString *)defaultName;
 + (NSInteger)integerForKey:(NSString *)defaultName;
@@ -32,12 +30,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)boolForKey:(NSString *)defaultName;
 
 NS_ASSUME_NONNULL_END
-
-
-
-
-
-
 
 
 @end

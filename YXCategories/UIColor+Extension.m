@@ -36,6 +36,35 @@
 }
 
 /**
+ 将UIColor 转为十六进制
+ 
+ @return 十六进制字符串
+ */
+- (NSString *)hex
+{
+    UIColor *color = self;
+    
+    if (CGColorGetNumberOfComponents(color.CGColor) < 4)
+    {
+        const CGFloat *components = CGColorGetComponents(color.CGColor);
+        color = [UIColor colorWithRed:components[0]
+                                green:components[0]
+                                 blue:components[0]
+                                alpha:components[1]];
+    }
+    
+    if (CGColorSpaceGetModel(CGColorGetColorSpace(color.CGColor)) != kCGColorSpaceModelRGB)
+    {
+        return [NSString stringWithFormat:@"#FFFFFF"];
+    }
+    
+    return [NSString stringWithFormat:@"#%d%d%d", (int)((CGColorGetComponents(color.CGColor))[0]*255.0),
+            (int)((CGColorGetComponents(color.CGColor))[1]*255.0),
+            (int)((CGColorGetComponents(color.CGColor))[2]*255.0)];
+}
+
+
+/**
  从十六进制字符串获取颜色，
  @param color 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
  @param alpha 透明度
@@ -98,35 +127,6 @@
 + (UIColor *)colorWithHexString:(NSString *)color
 {
     return [self colorWithHexString:color alpha:1.0f];
-}
-
-
-/**
- 将UIColor 转为十六进制
- 
- @return 十六进制字符串
- */
-- (NSString *)hex
-{
-    UIColor *color = self;
-    
-    if (CGColorGetNumberOfComponents(color.CGColor) < 4)
-    {
-        const CGFloat *components = CGColorGetComponents(color.CGColor);
-        color = [UIColor colorWithRed:components[0]
-                                green:components[0]
-                                 blue:components[0]
-                                alpha:components[1]];
-    }
-    
-    if (CGColorSpaceGetModel(CGColorGetColorSpace(color.CGColor)) != kCGColorSpaceModelRGB)
-    {
-        return [NSString stringWithFormat:@"#FFFFFF"];
-    }
-    
-    return [NSString stringWithFormat:@"#%d%d%d", (int)((CGColorGetComponents(color.CGColor))[0]*255.0),
-            (int)((CGColorGetComponents(color.CGColor))[1]*255.0),
-            (int)((CGColorGetComponents(color.CGColor))[2]*255.0)];
 }
 
 

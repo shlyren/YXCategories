@@ -15,7 +15,14 @@
  
  @return 生成的图片
  */
-- (UIImage *)image;
+@property (nonatomic, strong, readonly) UIImage *image;
+
+/**
+ 将UIColor 转为十六进制
+ 
+ @return 十六进制字符串
+ */
+@property (nonatomic, strong, readonly) NSString *hex;
 
 
 /**
@@ -37,11 +44,5 @@
 + (UIColor *)colorWithHexString:(NSString *)color;
 
 
-/**
- 将UIColor 转为十六进制
-
- @return 十六进制字符串
- */
-- (NSString *)hex;
 
 @end

@@ -11,9 +11,36 @@
 
 @implementation NSString (Extension)
 /**
+ 时间戳 -> yyy-MM-dd HH:mm
+ */
+- (NSString *)formatDate
+{
+    // 时间格式
+    NSInteger linux = self.integerValue;
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:linux / 1000];
+    NSDateFormatter *dataFormatter = [[NSDateFormatter alloc]init];
+    [dataFormatter setDateFormat: @"yyyy-MM-dd HH:mm"];
+    // 配置区域
+    NSLocale *local1 = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    [dataFormatter setLocale:local1];
+    NSString *dataTime = [dataFormatter stringFromDate:date];
+    return dataTime;
+}
+
+/**
+ 去掉空
+ 
+ @return str
+ */
+- (NSString *)stringByTrim
+{
+    NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    return [self stringByTrimmingCharactersInSet:set];
+}
+
+/**
  *  计算当前字符串显示所需的实际frame，返回值的x = 0, y = 0
  */
-
 - (CGRect)textRectWithSize:(CGSize)size attributes:(NSDictionary *)attributes{
     return [self boundingRectWithSize:size options:  NSStringDrawingUsesLineFragmentOrigin attributes: attributes context: nil];
 }
@@ -36,38 +63,13 @@
     }
     return NO;
 }
-/**
- 判断字符串是否为电话号码(移动,电信,联通)
- 
- @return 是否合法
- */
-- (BOOL)checkMoney
-{
-    NSString *str = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
-    if (!str.length) return true;
-    
-    NSString *regex = @"^(([0-9]|([1-9][0-9]{0,9}))((\\.[0-9]{0,2})?))$";
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    BOOL isMatch = [pred evaluateWithObject:str];
-    return isMatch;
-}
-
-/**
- 获取当前时间戳
- 
- @return 当前的时间戳
- */
-+ (long)getCurrentDateLong
-{
-    return [[NSDate date] timeIntervalSince1970] * 1000;
-}
 
 /**
  判断字符串是否为电话号码(移动,电信,联通)
  
  @return 是否合法
  */
-- (BOOL)checkPhone
+- (BOOL)isPhoneNum
 {
     
     NSString *str = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -99,15 +101,42 @@
 }
 
 /**
+  验证金额是否合法 支持0 0.0 0.00 两位小数
+ 
+ @return 是否合法
+ */
+- (BOOL)isMoney
+{
+    NSString *str = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+    if (!str.length) return true;
+    
+    NSString *regex = @"^(([0-9]|([1-9][0-9]{0,9}))((\\.[0-9]{0,2})?))$";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    BOOL isMatch = [pred evaluateWithObject:str];
+    return isMatch;
+}
+
+
+/**
  获取今年的字符串
  
  @return 今年字符串
  */
-+ (NSString *)currentYearStr
++ (NSString *)currentYear
 {
     NSDateFormatter *formatter = [NSDateFormatter new];
     [formatter setDateFormat:@"yyyy"];
     return [formatter stringFromDate:[NSDate date]];
+}
+
+/**
+ 获取当前时间戳
+ 
+ @return 当前的时间戳
+ */
++ (long)UnixTime
+{
+    return [[NSDate date] timeIntervalSince1970] * 1000;
 }
 
 /**
