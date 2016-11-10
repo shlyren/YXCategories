@@ -19,11 +19,8 @@
 @property (nonatomic, assign) CGSize  size;
 @property (nonatomic, assign) CGPoint origin;
 
+#pragma mark - 上下左右  前提是要先设置view的宽高
 
-/**
- 上下左右 
- 前提是要先设置view的宽高
- */
 @property (nonatomic, assign) CGFloat top;
 @property (nonatomic, assign) CGFloat left;
 @property (nonatomic, assign) CGFloat right;

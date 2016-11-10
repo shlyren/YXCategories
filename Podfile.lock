@@ -1,11 +1,15 @@
 PODS:
-  - YXCategories (1.1.1)
+  - YXCategories (1.3.0):
+    - YXCategories/Foundation (= 1.3.0)
+    - YXCategories/UIKit (= 1.3.0)
+  - YXCategories/Foundation (1.3.0)
+  - YXCategories/UIKit (1.3.0)
 
 DEPENDENCIES:
   - YXCategories
 
 SPEC CHECKSUMS:
-  YXCategories: fab268b8f0f87c50e9443ebe755112592de9320e
+  YXCategories: 7d84a8f65be58410b10db9e7fad7eb6ddc3bc452
 
 PODFILE CHECKSUM: 3b115051c7df61e7252359303a8985fc33505934
 

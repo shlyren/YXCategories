@@ -12,21 +12,93 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ 写入一个对象
+
+ @param value 对象
+ @param defaultName key
+ */
 + (void)setObject:(id)value forKey:(NSString *)defaultName;
+
+/**
+ 获取对象
+
+ @param defaultName key
+ @return 对象
+ */
 + (nullable id)objectForKey:(NSString *)defaultName;
 
+
+/**
+ 移除对象
+
+ @param defaultName key
+ */
 + (void)removeObjectForKey:(NSString *)defaultName;
 
+
+/**
+ 写入 NSInteger
+
+ @param value 值
+ @param defaultName key
+ */
 + (void)setInteger:(NSInteger)value forKey:(NSString *)defaultName;
+
+/**
+ 获取 NSInteger
+
+ @param defaultName key
+ @return NSInteger
+ */
 + (NSInteger)integerForKey:(NSString *)defaultName;
 
+
+/**
+ 写入 float
+ 
+ @param value 值
+ @param defaultName key
+ */
 + (void)setFloat:(float)value forKey:(NSString *)defaultName;
+/**
+ 获取 float
+ 
+ @param defaultName key
+ @return float
+ */
 + (float)floatForKey:(NSString *)defaultName;
 
+
+/**
+ 写入 double
+ 
+ @param value 值
+ @param defaultName key
+ */
 + (void)setDouble:(double)value forKey:(NSString *)defaultName;
+/**
+ 获取 double
+ 
+ @param defaultName key
+ @return double
+ */
 + (double)doubleForKey:(NSString *)defaultName;
 
+
+/**
+ 写入 BOOL
+ 
+ @param value 值
+ @param defaultName key
+ */
 + (void)setBool:(BOOL)value forKey:(NSString *)defaultName;
+/**
+ 获取 BOOL
+ 
+ @param defaultName key
+ @return BOOL
+ */
 + (BOOL)boolForKey:(NSString *)defaultName;
 
 NS_ASSUME_NONNULL_END

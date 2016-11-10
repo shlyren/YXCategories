@@ -39,13 +39,6 @@
 }
 
 /**
- *  计算当前字符串显示所需的实际frame，返回值的x = 0, y = 0
- */
-- (CGRect)textRectWithSize:(CGSize)size attributes:(NSDictionary *)attributes{
-    return [self boundingRectWithSize:size options:  NSStringDrawingUsesLineFragmentOrigin attributes: attributes context: nil];
-}
-
-/**
  *  判断字符串是否为空
  *
  *  @return boolean
@@ -157,5 +150,12 @@
         [output appendFormat:@"%02x", digest[i]];
     
     return output;
+}
+
+/**
+ *  计算当前字符串显示所需的实际frame，返回值的x = 0, y = 0
+ */
+- (CGRect)textRectWithSize:(CGSize)size attributes:(NSDictionary *)attributes{
+    return [self boundingRectWithSize:size options:  NSStringDrawingUsesLineFragmentOrigin attributes: attributes context: nil];
 }
 @end
