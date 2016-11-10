@@ -14,10 +14,10 @@ Pod::Spec.new do |s|
   s.source_files = "YXCategories/YXCategories.h"
 
   s.subspec 'Foundation' do |ss|
-  ss.source_files = 'YXCategories/*.{h,m}''
+  ss.source_files = 'YXCategories/Foundation/*.{h,m}'
   end
 
   s.subspec 'UIKit' do |ss|
-  ss.source_files = 'YXCategories/*.{h,m}''
+  ss.source_files = 'YXCategories/UIKit/*.{h,m}'
   end
 end
