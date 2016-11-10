@@ -20,7 +20,7 @@
  *
  *  @return UIBarButtonItem
  */
-+ (UIBarButtonItem * )setupBarButtonItemWithImage:(UIImage *)image highImage:(UIImage *)highImage addTarget:(id)target action:(SEL)action;
++ (UIBarButtonItem *)setupBarButtonItemWithImage:(UIImage *)image highImage:(UIImage *)highImage addTarget:(id)target action:(SEL)action;
 {
     return [self setupBarButtonItemWithImage: image highImage: highImage frame: CGRectZero addTarget: target action: action];
 }
@@ -35,7 +35,7 @@
  *
  *  @return UIBarButtonItem
  */
-+ (UIBarButtonItem * )setupBarButtonItemWithImage:(UIImage *)image highImage:(UIImage *)highImage frame:(CGRect)frame addTarget:(id)target action:(SEL)action;
++ (UIBarButtonItem *)setupBarButtonItemWithImage:(UIImage *)image highImage:(UIImage *)highImage frame:(CGRect)frame addTarget:(id)target action:(SEL)action;
 {
     UIView *view = [UIView new];
     
@@ -69,7 +69,7 @@
  *
  *  @return UIBarButtonItem
  */
-+ (UIBarButtonItem * )setupBarButtonItemWithImage:(UIImage *)image selectedImage:(UIImage *)selectedImage addTarget:(id)target action:(SEL)action
++ (UIBarButtonItem *)setupBarButtonItemWithImage:(UIImage *)image selectedImage:(UIImage *)selectedImage addTarget:(id)target action:(SEL)action
 {
     return [self setupBarButtonItemWithImage: image selectedImage: selectedImage frame: CGRectZero addTarget: self action: action];
 }
@@ -85,7 +85,7 @@
  *
  *  @return UIBarButtonItem
  */
-+ (UIBarButtonItem * )setupBarButtonItemWithImage:(UIImage *)image selectedImage:(UIImage *)selectedImage frame:(CGRect)frame addTarget:(id)target action:(SEL)action
++ (UIBarButtonItem *)setupBarButtonItemWithImage:(UIImage *)image selectedImage:(UIImage *)selectedImage frame:(CGRect)frame addTarget:(id)target action:(SEL)action
 {
     UIView *view = [UIView new];
     

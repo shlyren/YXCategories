@@ -10,7 +10,6 @@
 
 @interface UIBarButtonItem (Extension)
 
-
 /**
  *  高亮图片 设置UIBarButtonItem属性，并返回
  *
@@ -21,7 +20,7 @@
  *
  *  @return UIBarButtonItem
  */
-+ (UIBarButtonItem * )setupBarButtonItemWithImage:(UIImage *)image highImage:(UIImage *)highImage addTarget:(id)target action:(SEL)action;
++ (UIBarButtonItem *)setupBarButtonItemWithImage:(UIImage *)image highImage:(UIImage *)highImage addTarget:(id)target action:(SEL)action;
 /**
  *  高亮图片 设置UIBarButtonItem属性，并返回
  *
@@ -33,7 +32,7 @@
  *
  *  @return UIBarButtonItem
  */
-+ (UIBarButtonItem * )setupBarButtonItemWithImage:(UIImage *)image highImage:(UIImage *)highImage frame:(CGRect)frame addTarget:(id)target action:(SEL)action;
++ (UIBarButtonItem *)setupBarButtonItemWithImage:(UIImage *)image highImage:(UIImage *)highImage frame:(CGRect)frame addTarget:(id)target action:(SEL)action;
 
 /**
  *  选中图片 设置UIBarButtonItem属性，并返回
@@ -44,7 +43,7 @@
  *
  *  @return UIBarButtonItem
  */
-+ (UIBarButtonItem * )setupBarButtonItemWithImage:(UIImage *)image selectedImage:(UIImage *)selectedImage addTarget:(id)target action:(SEL)action;
++ (UIBarButtonItem *)setupBarButtonItemWithImage:(UIImage *)image selectedImage:(UIImage *)selectedImage addTarget:(id)target action:(SEL)action;
 
 /**
  *  选中图片 设置UIBarButtonItem属性，并返回

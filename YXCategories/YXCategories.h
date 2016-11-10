@@ -6,6 +6,18 @@
 //  Copyright © 2016年 任玉祥. All rights reserved.
 //
 
+/****************************************
+ 
+ 无头骑士 GJ is me http://misaka14.com
+ 
+ 丨柠萌酱丶 is me  http://ningmengjiang.com
+ 
+ 任玉祥 is me     http://shyren.com
+ 
+ yuxiang.ren is me http://yuxiang.ren
+ 
+ ******************************************/
+
 
 #import "NSBundle+Extension.h"
 #import "UICollectionView+Extension.h"

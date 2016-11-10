@@ -1,11 +1,11 @@
 PODS:
-  - YXCategories (1.1.0)
+  - YXCategories (1.1.1)
 
 DEPENDENCIES:
   - YXCategories
 
 SPEC CHECKSUMS:
-  YXCategories: 95c31fa33b49d06e9e7ab1f2f1ae440e4ecaa831
+  YXCategories: fab268b8f0f87c50e9443ebe755112592de9320e
 
 PODFILE CHECKSUM: 3b115051c7df61e7252359303a8985fc33505934
 
