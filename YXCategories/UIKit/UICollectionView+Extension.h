@@ -10,26 +10,9 @@
 
 @interface UICollectionView (Extension)
 /**
- xib 注册UICollectionViewCell reuseIdentifier 为cell类名的字符串
+ 注册UICollectionViewCell
  
- @param cellClass UICollectionViewCell
+ @param cell UICollectionViewCell
  */
-- (void)registerNibWithCell:(Class)cellClass;
-
-/**
- 从缓存池获取cell reuseIdentifier 为cell类名的字符串
-
- @param cellClass cellClass
- @param indexPath indexPath
- @return cell
- */
-- (__kindof UICollectionViewCell *)dequeueReusableCell:(Class)cellClass forIndexPath:(NSIndexPath *)indexPath;
-
-
-/**
- class 注册UICollectionViewCell reuseIdentifier 为cell类名的字符串
- 
- @param cellClass UICollectionViewCell
- */
-- (void)registerClass:(Class)cellClass;
+- (void)registerNibWithCell:(UICollectionViewCell *)cell;
 @end

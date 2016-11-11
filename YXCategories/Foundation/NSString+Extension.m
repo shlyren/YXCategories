@@ -8,7 +8,6 @@
 
 #import "NSString+Extension.h"
 #import <CommonCrypto/CommonDigest.h>
-#import "UIColor+Extension.h"
 
 @implementation NSString (Extension)
 /**
@@ -35,7 +34,15 @@
  */
 - (NSString *)stringByTrim
 {
-    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    return [self stringByTrimmingCharactersInSet:set];
+}
+
+/**
+ *  计算当前字符串显示所需的实际frame，返回值的x = 0, y = 0
+ */
+- (CGRect)textRectWithSize:(CGSize)size attributes:(NSDictionary *)attributes{
+    return [self boundingRectWithSize:size options:  NSStringDrawingUsesLineFragmentOrigin attributes: attributes context: nil];
 }
 
 /**
@@ -45,7 +52,16 @@
  */
 - (BOOL)isBlankString
 {
-    return self == nil || self == NULL || [self isKindOfClass:[NSNull class]] || self.stringByTrim.length == 0;
+    if (self == nil || self == NULL) {
+        return YES;
+    }
+    if ([self isKindOfClass:[NSNull class]]) {
+        return YES;
+    }
+    if ([[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0) {
+        return YES;
+    }
+    return NO;
 }
 
 /**
@@ -56,7 +72,7 @@
 - (BOOL)isPhoneNum
 {
     
-    NSString *str = self;
+    NSString *str = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     if (str.length != 11) return false;
     
@@ -91,7 +107,7 @@
  */
 - (BOOL)isMoney
 {
-    NSString *str = self;
+    NSString *str = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (!str.length) return true;
     
     NSString *regex = @"^(([0-9]|([1-9][0-9]{0,9}))((\\.[0-9]{0,2})?))$";
@@ -141,63 +157,5 @@
         [output appendFormat:@"%02x", digest[i]];
     
     return output;
-}
-
-
-- (UIColor *)color
-{
-    return [UIColor colorWithHexString:self];
-}
-
-- (NSArray *)arryWithEndDate:(NSString *)endDateStr;
-{
-    
-    if (endDateStr.length < 6) return nil;
-    
-    // 获取连接符
-    NSString *enDash = @"";
-    if (endDateStr.length > 6)
-        enDash = [endDateStr substringWithRange:NSMakeRange(4, endDateStr.length - 6)];
-    
-    /** 时间格式 */
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    formatter.dateFormat = [NSString stringWithFormat:@"yyyy%@MM", enDash];
-    NSDateFormatter *yearFor = [NSDateFormatter new];
-    yearFor.dateFormat = [NSString stringWithFormat:@"yyyy"];
-    NSDateFormatter *monthFor = [NSDateFormatter new];
-    monthFor.dateFormat = [NSString stringWithFormat:@"MM"];
-    
-    /** 截止的时间 */
-    NSDate *endDate = [formatter dateFromString:endDateStr];
-    if (endDate == nil) return nil;
-    NSInteger endYear = [[yearFor stringFromDate:endDate] integerValue];;
-    NSInteger endMonth = [[monthFor stringFromDate:endDate] integerValue];
-    
-    /** 当前的时间 */
-    NSDate *currentDate = [NSDate date];
-    NSInteger currentYear = [[yearFor stringFromDate:currentDate] integerValue];
-    NSInteger currentMonth = [[monthFor stringFromDate:currentDate] integerValue];;
-    
-    NSInteger maxMonth = 0;
-    NSInteger minMonth = 0;
-    NSMutableArray *tmpArr = [NSMutableArray array];
-    for (NSInteger resYear = currentYear; resYear >= endYear; resYear--)
-    {
-        maxMonth = resYear == currentYear ? currentMonth : 12;
-        minMonth = resYear == endYear ? endMonth : 1;
-        
-        for (NSInteger resMonth = maxMonth; resMonth >= minMonth; resMonth--)
-            [tmpArr addObject:[NSString stringWithFormat:@"%zd%@%02zd",resYear, enDash,resMonth]];
-    }
-
-    return tmpArr;
-}
-
-/**
- *  计算当前字符串显示所需的实际frame，返回值的x = 0, y = 0
- */
-- (CGRect)textRectWithSize:(CGSize)size attributes:(NSDictionary *)attributes
-{
-    return [self boundingRectWithSize:size options:  NSStringDrawingUsesLineFragmentOrigin attributes: attributes context: nil];
 }
 @end

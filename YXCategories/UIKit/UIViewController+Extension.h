@@ -10,10 +10,12 @@
 
 @interface UIViewController (Extension)
 
-/** 最前面的viewcontroller */
 - (UIViewController *)topViewController;
 
-/** 加载storyboard initialViewController */
+/**
+ 加载storyboard initialViewController
+
+ @return UIViewController
+ */
 - (__kindof UIViewController *)loadStoryboard;
-+ (__kindof UIViewController *)loadStoryboard;
 @end

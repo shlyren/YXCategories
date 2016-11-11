@@ -13,21 +13,10 @@
 /**
  注册UICollectionViewCell
  
- @param cellClass UICollectionViewCell
+ @param cell UICollectionViewCell
  */
-- (void)registerNibWithCell:(Class)cellClass
+- (void)registerNibWithCell:(UICollectionViewCell *)cell
 {
-    [self registerNib:[UINib nibWithNibName:NSStringFromClass(cellClass) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass(cellClass)];
-}
-
-
-- (__kindof UICollectionViewCell *)dequeueReusableCell:(Class)cellClass forIndexPath:(NSIndexPath *)indexPath
-{
-    return [self dequeueReusableCellWithReuseIdentifier:NSStringFromClass(cellClass) forIndexPath:indexPath];
-}
-
-- (void)registerClass:(Class)cellClass
-{
-    [self registerClass:cellClass forCellWithReuseIdentifier:NSStringFromClass(cellClass)];
+    [self registerNib:[UINib nibWithNibName:NSStringFromClass([cell class]) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([cell class])];
 }
 @end

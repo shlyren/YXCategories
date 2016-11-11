@@ -76,15 +76,11 @@
 /**
  注册tableViewCell
  
- @param cellClass UITableViewCell class
+ @param cell UITableViewCell class
  */
 - (void)registerNibWithCell:(Class)cellClass
 {
     [self registerNib:[UINib nibWithNibName:NSStringFromClass(cellClass) bundle:nil] forCellReuseIdentifier:NSStringFromClass(cellClass)];
-}
-- (void)registerClass:(Class)cellClass
-{
-    [self registerClass:cellClass forCellReuseIdentifier:NSStringFromClass(cellClass)];
 }
 
 /**

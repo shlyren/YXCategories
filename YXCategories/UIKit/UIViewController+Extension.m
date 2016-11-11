@@ -20,12 +20,7 @@
     return [UIStoryboard storyboardWithName:NSStringFromClass([self class]) bundle:nil].instantiateInitialViewController;
 }
 
-+ (__kindof UIViewController *)loadStoryboard
-{
-    return [UIStoryboard storyboardWithName:NSStringFromClass(self) bundle:nil].instantiateInitialViewController;
-}
-
-- (UIViewController *)topViewControllerWithRootViewController:(UIViewController *)rootViewController
+- (UIViewController *)topViewControllerWithRootViewController:(UIViewController*)rootViewController
 {
     if ([rootViewController isKindOfClass:[UITabBarController class]])
     {
