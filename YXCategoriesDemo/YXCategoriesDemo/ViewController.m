@@ -2,12 +2,11 @@
 //  ViewController.m
 //  YXCategoriesDemo
 //
-//  Created by 任玉祥 on 2016/11/3.
+//  Created by JiaQi on 2016/11/11.
 //  Copyright © 2016年 任玉祥. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "YXCategories.h"
 
 @interface ViewController ()
 
@@ -17,15 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    /**
-     pod spec lint
-     pod trunk push YXCategories.podspec --allow-warnings
-     
-     */
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 
 @end
