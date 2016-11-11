@@ -434,6 +434,7 @@
 				552713EA1DD5B41A0041521E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
