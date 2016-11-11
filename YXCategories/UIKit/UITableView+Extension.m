@@ -37,7 +37,7 @@
     {
         self.backgroundView = nil;
         self.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    }    
+    }
 }
 
 
@@ -65,7 +65,7 @@
 {
     
     UIView *view = [UIView new];
-
+    
     view.backgroundColor = [UIColor whiteColor];
     
     [self setTableFooterView:view];
@@ -76,11 +76,15 @@
 /**
  注册tableViewCell
  
- @param cell UITableViewCell class
+ @param cellClass UITableViewCell class
  */
 - (void)registerNibWithCell:(Class)cellClass
 {
     [self registerNib:[UINib nibWithNibName:NSStringFromClass(cellClass) bundle:nil] forCellReuseIdentifier:NSStringFromClass(cellClass)];
+}
+- (void)registerClass:(Class)cellClass
+{
+    [self registerClass:cellClass forCellReuseIdentifier:NSStringFromClass(cellClass)];
 }
 
 /**

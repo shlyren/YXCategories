@@ -34,18 +34,24 @@
 
 
 /**
- 注册tableViewCell
-
+ xib 注册tableViewCell  reuseIdentifier 为cell类名的字符串
+ 
  @param cellClass UITableViewCell
  */
 - (void)registerNibWithCell:(Class)cellClass;
 
+/**
+ class 注册tableViewCell reuseIdentifier 为cell类名的字符串
+ 
+ @param cellClass UITableViewCell
+ */
+- (void)registerClass:(Class)cellClass;
 
 /**
- 从缓存池获取cell
-
+ 从缓存池获取cell reuseIdentifier 为cell类名的字符串
+ 
  @param cellClass cell class
-
+ 
  @return cell
  */
 - (__kindof UITableViewCell *)dequeueReusableCell:(Class)cellClass;

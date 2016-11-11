@@ -9,26 +9,70 @@
 #import "NSBundle+Extension.h"
 
 @implementation NSBundle (Extension)
-+ (id)loadFileName:(NSString *)fileName
+
++ (NSString *)bundleIdentifier
 {
-    NSData *data = [NSData dataWithContentsOfFile:[[self mainBundle] pathForResource:fileName ofType:nil]];
+    return [NSBundle mainBundle].infoDictionary[@"CFBundleIdentifier"];
+}
+
++ (NSString *)shortVersionString
+{
+    return [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+}
+
++ (NSString *)bundleVersion
+{
+    return [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+}
+
++ (id)objectWithJson:(NSString *)fileName
+{
+    
+    NSData *data = [NSData dataWithContentsOfFile:[[self mainBundle] pathForResource:fileName ofType:@"json"]];
     return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
 }
 
 
-+ (NSDictionary *)loadDictFileName:(NSString *)fileName
++ (NSDictionary *)dictWithJson:(NSString *)fileName
 {
-    if ([[self loadFileName:fileName] isKindOfClass:[NSDictionary class]]) {
-        return [self loadFileName:fileName];
+    if ([[self objectWithJson:fileName] isKindOfClass:[NSDictionary class]]) {
+        return [self objectWithJson:fileName];
     }
     return nil;
 }
 
-+ (NSArray *)loadArrayFileName:(NSString *)fileName
++ (NSArray *)arrayWithJson:(NSString *)fileName
 {
-    if ([[self loadFileName:fileName] isKindOfClass:[NSArray class]]) {
-        return [self loadFileName:fileName];
+    if ([[self objectWithJson:fileName] isKindOfClass:[NSArray class]]) {
+        return [self objectWithJson:fileName];
     }
     return nil;
+}
+
+
+
+
+/**
+ 加载 mainBundle 字典
+ 
+ @param fileName 文件名
+ @return 字典
+ */
++ (NSDictionary *)dictWithPlist:(NSString *)fileName
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+    return [NSDictionary dictionaryWithContentsOfFile:path];
+}
+
+/**
+ 加载 mainBundle 数组
+ 
+ @param fileName 文件名
+ @return 数组
+ */
++ (NSArray *)arrayWithPlist:(NSString *)fileName
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+    return [NSArray arrayWithContentsOfFile:path];
 }
 @end

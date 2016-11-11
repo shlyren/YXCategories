@@ -13,6 +13,8 @@
 		554694D61DCADC45004CCF43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 554694D41DCADC45004CCF43 /* Main.storyboard */; };
 		554694D81DCADC45004CCF43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554694D71DCADC45004CCF43 /* Assets.xcassets */; };
 		554694DB1DCADC45004CCF43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 554694D91DCADC45004CCF43 /* LaunchScreen.storyboard */; };
+		55471D3B1DD5C6DE00F20E89 /* UIDevice+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55471D3A1DD5C6DE00F20E89 /* UIDevice+Extension.m */; };
+		55471D3E1DD5C6EB00F20E89 /* UILabel+StringFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 55471D3D1DD5C6EB00F20E89 /* UILabel+StringFrame.m */; };
 		55F028F01DD44DA4009C0F73 /* NSBundle+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028D41DD44DA4009C0F73 /* NSBundle+Extension.m */; };
 		55F028F11DD44DA4009C0F73 /* NSNotificationCenter+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028D61DD44DA4009C0F73 /* NSNotificationCenter+Extension.m */; };
 		55F028F21DD44DA4009C0F73 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028D81DD44DA4009C0F73 /* NSString+Extension.m */; };
@@ -44,6 +46,10 @@
 		554694D71DCADC45004CCF43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		554694DA1DCADC45004CCF43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		554694DC1DCADC45004CCF43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55471D391DD5C6DE00F20E89 /* UIDevice+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Extension.h"; sourceTree = "<group>"; };
+		55471D3A1DD5C6DE00F20E89 /* UIDevice+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Extension.m"; sourceTree = "<group>"; };
+		55471D3C1DD5C6EB00F20E89 /* UILabel+StringFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+StringFrame.h"; sourceTree = "<group>"; };
+		55471D3D1DD5C6EB00F20E89 /* UILabel+StringFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+StringFrame.m"; sourceTree = "<group>"; };
 		55F0289F1DD31C20009C0F73 /* YXCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXCategories.h; sourceTree = "<group>"; };
 		55F028D31DD44DA4009C0F73 /* NSBundle+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Extension.h"; sourceTree = "<group>"; };
 		55F028D41DD44DA4009C0F73 /* NSBundle+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Extension.m"; sourceTree = "<group>"; };
@@ -158,6 +164,10 @@
 		55F028DB1DD44DA4009C0F73 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				55471D3C1DD5C6EB00F20E89 /* UILabel+StringFrame.h */,
+				55471D3D1DD5C6EB00F20E89 /* UILabel+StringFrame.m */,
+				55471D391DD5C6DE00F20E89 /* UIDevice+Extension.h */,
+				55471D3A1DD5C6DE00F20E89 /* UIDevice+Extension.m */,
 				55F028DC1DD44DA4009C0F73 /* UIBarButtonItem+Extension.h */,
 				55F028DD1DD44DA4009C0F73 /* UIBarButtonItem+Extension.m */,
 				55F028DE1DD44DA4009C0F73 /* UIButton+Extension.h */,
@@ -324,11 +334,13 @@
 			files = (
 				55F028FB1DD44DA4009C0F73 /* UIView+Extension.m in Sources */,
 				55F028F61DD44DA4009C0F73 /* UICollectionView+Extension.m in Sources */,
+				55471D3E1DD5C6EB00F20E89 /* UILabel+StringFrame.m in Sources */,
 				55F028FA1DD44DA4009C0F73 /* UITableView+Extension.m in Sources */,
 				554694D31DCADC45004CCF43 /* ViewController.m in Sources */,
 				55F028F91DD44DA4009C0F73 /* UIScrollView+Extension.m in Sources */,
 				55F028F21DD44DA4009C0F73 /* NSString+Extension.m in Sources */,
 				55F028F81DD44DA4009C0F73 /* UIImage+Extension.m in Sources */,
+				55471D3B1DD5C6DE00F20E89 /* UIDevice+Extension.m in Sources */,
 				554694D01DCADC45004CCF43 /* AppDelegate.m in Sources */,
 				55F028FC1DD44DA4009C0F73 /* UIView+Frame.m in Sources */,
 				55F028F71DD44DA4009C0F73 /* UIColor+Extension.m in Sources */,

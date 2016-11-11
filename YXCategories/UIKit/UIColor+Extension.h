@@ -10,18 +10,10 @@
 
 @interface UIColor (Extension)
 
-/**
- 由颜色生成图片
- 
- @return 生成的图片
- */
+/** 由颜色 -> 图片 */
 @property (nonatomic, strong, readonly) UIImage *image;
 
-/**
- 将UIColor 转为十六进制
- 
- @return 十六进制字符串
- */
+/** UIColor -> 十六进制 */
 @property (nonatomic, strong, readonly) NSString *hex;
 
 
@@ -42,7 +34,6 @@
  @return 颜色
  */
 + (UIColor *)colorWithHexString:(NSString *)color;
-
 
 
 @end
