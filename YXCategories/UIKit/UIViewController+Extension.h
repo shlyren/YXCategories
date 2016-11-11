@@ -11,8 +11,9 @@
 @interface UIViewController (Extension)
 
 /** 最前面的viewcontroller */
-@property (nonatomic, strong, readonly) UIViewController *topViewController;
+- (UIViewController *)topViewController;
 
 /** 加载storyboard initialViewController */
-@property (nonatomic, strong, readonly) __kindof UIViewController *loadStoryboard;
+- (__kindof UIViewController *)loadStoryboard;
++ (__kindof UIViewController *)loadStoryboard;
 @end

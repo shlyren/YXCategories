@@ -14,5 +14,5 @@
 /**
  *  根据label内容长度的多少，设置label字体大小
  */
-@property (nonatomic, readonly) void adjustFontSizeToFillItsContents;
+- (void)adjustFontSizeToFillItsContents;
 @end

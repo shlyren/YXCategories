@@ -26,7 +26,7 @@
     return [self dequeueReusableCellWithReuseIdentifier:NSStringFromClass(cellClass) forIndexPath:indexPath];
 }
 
-- (void)registerCell:(Class)cellClass
+- (void)registerClass:(Class)cellClass
 {
     [self registerClass:cellClass forCellWithReuseIdentifier:NSStringFromClass(cellClass)];
 }

@@ -101,6 +101,52 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)boolForKey:(NSString *)defaultName;
 
+
+/**
+ 获取字符串
+
+ @param defaultName key
+ @return 字符串
+ */
++ (nullable NSString *)stringForKey:(NSString *)defaultName;
+
+
+/**
+ 获取数组
+
+ @param defaultName key
+ @return 数组
+ */
++ (nullable NSArray *)arrayForKey:(NSString *)defaultName;
+
+
+/**
+ 获取字符串数组
+
+ @param defaultName key
+ @return 数组
+ */
++ (nullable NSArray<NSString *> *)stringArrayForKey:(NSString *)defaultName;
+
+
+/**
+ 获取字典
+
+ @param defaultName key
+ @return 字典
+ */
++ (nullable NSDictionary<NSString *, id> *)dictionaryForKey:(NSString *)defaultName;
+
+
+/**
+ 获取data
+
+ @param defaultName key
+ @return data
+ */
++ (nullable NSData *)dataForKey:(NSString *)defaultName;
+
+
 NS_ASSUME_NONNULL_END
 
 

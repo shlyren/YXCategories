@@ -11,7 +11,6 @@
 @interface UIButton (Extension)
 
 #pragma mark - title
-
 /** 默认标题 */
 @property (nonatomic, strong) NSString *normalTitle;
 /** 高亮标题 */

@@ -35,6 +35,20 @@
 /** md5加密 */
 @property (nonatomic, strong, readonly) NSString *md5;
 
+/** 字符串 -> UIColor
+ 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
+ */
+@property (nonatomic, strong, readonly) UIColor *color;
+
+
+/**
+ 获取从当前的年月到截至的年月
+
+ @param endDateStr 截至年月  格式 yyyy-MM `-`为连接符 可根据情况自己定制
+ @return 数组 firstObject 为当前的年月
+ */
+- (NSArray *)arryWithEndDate:(NSString *)endDateStr;
+
 /**
  计算当前字符串显示所需的实际frame，返回值的x = 0, y = 0
  

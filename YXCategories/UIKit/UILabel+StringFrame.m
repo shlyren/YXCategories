@@ -26,11 +26,12 @@
     return retSize;
 }
 
--(void) adjustFontSizeToFillItsContents
+-(void)adjustFontSizeToFillItsContents
 {
-    NSString* text = self.text;
+    NSString *text = self.text;
     
-    for (int i = CATEGORY_DYNAMIC_FONT_SIZE_MAXIMUM_VALUE; i>CATEGORY_DYNAMIC_FONT_SIZE_MINIMUM_VALUE; i--) {
+    for (int i = CATEGORY_DYNAMIC_FONT_SIZE_MAXIMUM_VALUE; i>CATEGORY_DYNAMIC_FONT_SIZE_MINIMUM_VALUE; i--)
+    {
         
         UIFont *font = [UIFont fontWithName:self.font.fontName size:(CGFloat)i];
         NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:text attributes:@{NSFontAttributeName: font}];
@@ -40,6 +41,7 @@
         if (rectSize.size.height <= self.frame.size.height) {
             self.font = [UIFont fontWithName:self.font.fontName size:(CGFloat)i];
             break;
+            
         }
     }
     

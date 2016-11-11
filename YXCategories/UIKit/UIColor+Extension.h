@@ -36,5 +36,4 @@
 + (UIColor *)colorWithHexString:(NSString *)color;
 
 
-
 @end

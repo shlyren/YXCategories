@@ -22,5 +22,5 @@
 
  @return 所有的view集合
  */
-+ (NSArray<__kindof UIView*>*)loadViewsFromNib;
++ (NSArray<__kindof UIView*> *)loadViewsFromNib;
 @end

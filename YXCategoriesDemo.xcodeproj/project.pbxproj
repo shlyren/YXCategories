@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		552713C71DD579730041521E /* UIDevice+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 552713C61DD579730041521E /* UIDevice+Extension.m */; };
 		554694CD1DCADC45004CCF43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 554694CC1DCADC45004CCF43 /* main.m */; };
 		554694D01DCADC45004CCF43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 554694CF1DCADC45004CCF43 /* AppDelegate.m */; };
 		554694D31DCADC45004CCF43 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554694D21DCADC45004CCF43 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 		1B180230F60F5EACB9D924F7 /* Pods-YXCategoriesDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YXCategoriesDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YXCategoriesDemo/Pods-YXCategoriesDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		255944569D970B45849C97D2 /* libPods-YXCategoriesDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YXCategoriesDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B06FCD88096E649013B3D25 /* Pods-YXCategoriesDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YXCategoriesDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YXCategoriesDemo/Pods-YXCategoriesDemo.release.xcconfig"; sourceTree = "<group>"; };
+		552713C51DD579730041521E /* UIDevice+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Extension.h"; sourceTree = "<group>"; };
+		552713C61DD579730041521E /* UIDevice+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Extension.m"; sourceTree = "<group>"; };
 		554694C81DCADC45004CCF43 /* YXCategoriesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YXCategoriesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		554694CC1DCADC45004CCF43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		554694CE1DCADC45004CCF43 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 				55F028ED1DD44DA4009C0F73 /* UIView+Frame.m */,
 				55F028EE1DD44DA4009C0F73 /* UIViewController+Extension.h */,
 				55F028EF1DD44DA4009C0F73 /* UIViewController+Extension.m */,
+				552713C51DD579730041521E /* UIDevice+Extension.h */,
+				552713C61DD579730041521E /* UIDevice+Extension.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				55F028F11DD44DA4009C0F73 /* NSNotificationCenter+Extension.m in Sources */,
 				55F028F41DD44DA4009C0F73 /* UIBarButtonItem+Extension.m in Sources */,
 				55F028F01DD44DA4009C0F73 /* NSBundle+Extension.m in Sources */,
+				552713C71DD579730041521E /* UIDevice+Extension.m in Sources */,
 				554694CD1DCADC45004CCF43 /* main.m in Sources */,
 				55F028F51DD44DA4009C0F73 /* UIButton+Extension.m in Sources */,
 				55F028FD1DD44DA4009C0F73 /* UIViewController+Extension.m in Sources */,

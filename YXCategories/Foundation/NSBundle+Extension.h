@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface NSBundle (Extension)
+
+#pragma mark - app info
 /** bundleIdentifier */
 @property (nonatomic, class, strong, readonly) NSString *bundleIdentifier;
 /** app版本号 */
@@ -16,27 +18,47 @@
 /** 内建版本号 */
 @property (class, nonatomic, strong, readonly) NSString *bundleVersion;
 
+#pragma mark - json file
 /**
  加载 mainBundle 文件
 
- @param fileName 文件名 .json
+ @param fileName 文件名
  @return 文件
  */
-+ (id)loadFileName:(NSString *)fileName;
++ (id)objectWithJson:(NSString *)fileName;
 
 /**
  加载 mainBundle 字典
  
- @param fileName 文件名 .json
+ @param fileName 文件名
  @return 字典
  */
-+ (NSDictionary *)loadDictFileName:(NSString *)fileName;
++ (NSDictionary *)dictWithJson:(NSString *)fileName;
 
 /**
  加载 mainBundle 数组
  
- @param fileName 文件名 .json
+ @param fileName 文件名
  @return 数组
  */
-+ (NSArray *)loadArrayFileName:(NSString *)fileName;
++ (NSArray *)arrayWithJson:(NSString *)fileName;
+
+#pragma mark - plist file
+
+/**
+ 加载 mainBundle 字典
+ 
+ @param fileName 文件名
+ @return 字典
+ */
++ (NSDictionary *)dictWithPlist:(NSString *)fileName;
+
+/**
+ 加载 mainBundle 数组
+ 
+ @param fileName 文件名
+ @return 数组
+ */
++ (NSArray *)arrayWithPlist:(NSString *)fileName;
+
 @end

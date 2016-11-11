@@ -120,17 +120,43 @@ NS_ASSUME_NONNULL_BEGIN
 {
     [[NSUserDefaults standardUserDefaults] setBool:value forKey:defaultName];
     [[NSUserDefaults standardUserDefaults] synchronize];
-}/**
-  获取 BOOL
-  
-  @param defaultName key
-  @return BOOL
-  */
+}
+/**
+ 获取 BOOL
+
+ @param defaultName key
+ @return BOOL
+*/
 + (BOOL)boolForKey:(NSString *)defaultName
 {
     return [[NSUserDefaults standardUserDefaults] boolForKey:defaultName];
 }
 
+
++ (nullable NSString *)stringForKey:(NSString *)defaultName
+{
+    return [[NSUserDefaults standardUserDefaults] stringForKey:defaultName];
+}
+
++ (nullable NSArray<NSString *> *)stringArrayForKey:(NSString *)defaultName
+{
+    return [[NSUserDefaults standardUserDefaults] stringArrayForKey:defaultName];
+}
+
++ (nullable NSArray *)arrayForKey:(NSString *)defaultName
+{
+    return [[NSUserDefaults standardUserDefaults] arrayForKey:defaultName];
+}
+
++ (nullable NSDictionary<NSString *, id> *)dictionaryForKey:(NSString *)defaultName
+{
+    return [[NSUserDefaults standardUserDefaults] dictionaryForKey:defaultName];
+}
+
++ (nullable NSData *)dataForKey:(NSString *)defaultName
+{
+    return [[NSUserDefaults standardUserDefaults] dataForKey:defaultName];
+}
 NS_ASSUME_NONNULL_END
 
 @end
