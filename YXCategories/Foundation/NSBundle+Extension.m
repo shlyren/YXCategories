@@ -9,6 +9,22 @@
 #import "NSBundle+Extension.h"
 
 @implementation NSBundle (Extension)
+
++ (NSString *)bundleIdentifier
+{
+    return [NSBundle mainBundle].infoDictionary[@"CFBundleIdentifier"];
+}
+
++ (NSString *)shortVersionString
+{
+    return [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+}
+
++ (NSString *)bundleVersion
+{
+    return [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+}
+
 + (id)loadFileName:(NSString *)fileName
 {
     NSData *data = [NSData dataWithContentsOfFile:[[self mainBundle] pathForResource:fileName ofType:nil]];
