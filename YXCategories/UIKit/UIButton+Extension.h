@@ -49,4 +49,13 @@
 @property (nonatomic, strong) UIImage *selectedBgImg;
 /** 不可用背景图片 */
 @property (nonatomic, strong) UIImage *disabledBgImg;
+
+
+#pragma mark - action
+/**
+ 给按钮添加事件
+ event == UIControlEventTouchUpInside
+ @param action 事件回调
+ */
+- (void)addTouchUpInsideAction:(void (^)(UIButton *button))action;
 @end

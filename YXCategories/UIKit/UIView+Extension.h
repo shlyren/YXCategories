@@ -23,4 +23,11 @@
  @return 所有的view集合
  */
 + (NSArray<__kindof UIView*>*)loadViewsFromNib;
+
+/**
+ 给uiview添加点击事件
+
+ @param action 事件
+ */
+- (void)addTapAction:(void (^)(UIView *view))action;
 @end

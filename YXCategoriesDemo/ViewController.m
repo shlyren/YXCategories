@@ -9,8 +9,11 @@
 #import "ViewController.h"
 #import "YXCategories.h"
 
+
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *tf;
+@property (weak, nonatomic) IBOutlet UIButton *btn;
 @end
 
 @implementation ViewController
@@ -23,6 +26,22 @@
      pod trunk push YXCategories.podspec --allow-warnings
      
      */
+    
+    [self.btn addTouchUpInsideAction:^(UIButton *button) {
+       
+        NSLog(@"\n%@ \n%@",self.btn, button);
+        
+    }];
+    
+    [self.tf addActionByEditingChanged:^(UITextField *textField) {
+        NSLog(@"\n%@ \n%@",self.tf, textField);
+    }];
+    
+    UIView *sv = self.view;
+    [self.view addTapAction:^(UIView *view) {
+        NSLog(@"\n%@ \n%@",sv, view);
+    }];
+    
 }
 
 

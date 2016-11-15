@@ -30,6 +30,7 @@
 		55F028FC1DD44DA4009C0F73 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028ED1DD44DA4009C0F73 /* UIView+Frame.m */; };
 		55F028FD1DD44DA4009C0F73 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028EF1DD44DA4009C0F73 /* UIViewController+Extension.m */; };
 		7572357BCA97CEED4977A646 /* libPods-YXCategoriesDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 255944569D970B45849C97D2 /* libPods-YXCategoriesDemo.a */; };
+		8017312C1DDAB275002D6F74 /* UITextField+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8017312B1DDAB275002D6F74 /* UITextField+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,8 @@
 		55F028ED1DD44DA4009C0F73 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		55F028EE1DD44DA4009C0F73 /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		55F028EF1DD44DA4009C0F73 /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
+		8017312A1DDAB275002D6F74 /* UITextField+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Extension.h"; sourceTree = "<group>"; };
+		8017312B1DDAB275002D6F74 /* UITextField+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,8 @@
 				55F028DD1DD44DA4009C0F73 /* UIBarButtonItem+Extension.m */,
 				55F028DE1DD44DA4009C0F73 /* UIButton+Extension.h */,
 				55F028DF1DD44DA4009C0F73 /* UIButton+Extension.m */,
+				8017312A1DDAB275002D6F74 /* UITextField+Extension.h */,
+				8017312B1DDAB275002D6F74 /* UITextField+Extension.m */,
 				55F028E01DD44DA4009C0F73 /* UICollectionView+Extension.h */,
 				55F028E11DD44DA4009C0F73 /* UICollectionView+Extension.m */,
 				55F028E21DD44DA4009C0F73 /* UIColor+Extension.h */,
@@ -349,6 +354,7 @@
 				55F028F01DD44DA4009C0F73 /* NSBundle+Extension.m in Sources */,
 				554694CD1DCADC45004CCF43 /* main.m in Sources */,
 				55F028F51DD44DA4009C0F73 /* UIButton+Extension.m in Sources */,
+				8017312C1DDAB275002D6F74 /* UITextField+Extension.m in Sources */,
 				55F028FD1DD44DA4009C0F73 /* UIViewController+Extension.m in Sources */,
 				55F028F31DD44DA4009C0F73 /* NSUserDefaults+Extension.m in Sources */,
 			);
@@ -417,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -460,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -475,6 +481,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XJPMR8FRF3;
 				INFOPLIST_FILE = YXCategoriesDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.YXCategoriesDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XJPMR8FRF3;
 				INFOPLIST_FILE = YXCategoriesDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.YXCategoriesDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

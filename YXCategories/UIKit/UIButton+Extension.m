@@ -7,6 +7,11 @@
 //
 
 #import "UIButton+Extension.h"
+#import <objc/runtime.h>
+
+@interface UIButton ()
+@property (nonatomic, copy) void (^action)(UIButton *button);
+@end
 
 @implementation UIButton (Extension)
 #pragma mark - title
@@ -142,5 +147,43 @@
 - (UIImage *)disabledBgImg
 {
     return [self backgroundImageForState:UIControlStateDisabled];
+}
+
+
+#pragma mark - action
+static char *kTouchUpInsideAction = "kTouchUpInsideAction";
+- (void)setAction:(void (^)(UIButton *))action
+{
+    /*
+     产生关联,让某个对象(name)与当前对象的属性(name)产生关联
+     参数1: id object :表示给哪个对象添加关联
+     参数2: const void *key : 表示: id类型的key值(以后用这个key来获取属性) 属性名
+     参数3: id value : 属性值
+     参数4: 策略, 是个枚举(点进去,解释很详细)
+     */
+    objc_setAssociatedObject(self, kTouchUpInsideAction,action , OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void (^)(UIButton *))action
+{
+    return objc_getAssociatedObject(self, kTouchUpInsideAction);
+}
+
+/**
+ 给按钮添加点击事件
+ event == UIControlEventTouchUpInside
+ @param action 事件 block
+ */
+- (void)addTouchUpInsideAction:(void (^)(UIButton *button))action
+{
+    self.action = action;
+    [self addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)buttonClick:(UIButton *)btn
+{
+    if (self.action) {
+        self.action(btn);
+    }
 }
 @end

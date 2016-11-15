@@ -7,6 +7,11 @@
 //
 
 #import "UIView+Extension.h"
+#import <objc/runtime.h>
+
+@interface UIView ()
+@property (nonatomic, copy) void (^action)(UIView *);
+@end
 
 @implementation UIView (Extension)
 
@@ -39,6 +44,33 @@
 + (NSArray<__kindof UIView*>*)loadViewsFromNib
 {
     return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil];
+}
+
+
+#pragma mark - action
+- (void)addTapAction:(void (^)(UIView *view))action
+{
+    self.action = action;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTap)];
+    [self addGestureRecognizer:tap];
+}
+
+static char *kTapAction = "kTapAction";
+- (void)setAction:(void (^)(UIView *))action
+{
+    objc_setAssociatedObject(self, kTapAction, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void (^)(UIView *))action
+{
+    return objc_getAssociatedObject(self, kTapAction);
+}
+
+- (void)viewTap
+{
+    if (self.action) {
+        self.action(self);
+    }
 }
 
 @end
