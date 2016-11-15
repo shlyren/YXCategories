@@ -33,7 +33,7 @@
         
     }];
     
-    [self.tf addActionByEditingChanged:^(UITextField *textField) {
+    [self.tf addEditingChangedAction:^(UITextField *textField) {
         NSLog(@"\n%@ \n%@",self.tf, textField);
     }];
     
