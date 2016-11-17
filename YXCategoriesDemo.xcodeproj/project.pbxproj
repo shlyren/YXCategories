@@ -31,6 +31,9 @@
 		55F028FD1DD44DA4009C0F73 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028EF1DD44DA4009C0F73 /* UIViewController+Extension.m */; };
 		7572357BCA97CEED4977A646 /* libPods-YXCategoriesDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 255944569D970B45849C97D2 /* libPods-YXCategoriesDemo.a */; };
 		8017312C1DDAB275002D6F74 /* UITextField+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8017312B1DDAB275002D6F74 /* UITextField+Extension.m */; };
+		80C97BC21DDD836D00F8828E /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 80C97BBE1DDD836D00F8828E /* MBProgressHUD.bundle */; };
+		80C97BC31DDD836D00F8828E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BC01DDD836D00F8828E /* MBProgressHUD.m */; };
+		80C97BC61DDD83A200F8828E /* MBProgressHUD+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BC51DDD83A200F8828E /* MBProgressHUD+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,11 @@
 		55F028EF1DD44DA4009C0F73 /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		8017312A1DDAB275002D6F74 /* UITextField+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Extension.h"; sourceTree = "<group>"; };
 		8017312B1DDAB275002D6F74 /* UITextField+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Extension.m"; sourceTree = "<group>"; };
+		80C97BBE1DDD836D00F8828E /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		80C97BBF1DDD836D00F8828E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		80C97BC01DDD836D00F8828E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		80C97BC41DDD83A200F8828E /* MBProgressHUD+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Extension.h"; sourceTree = "<group>"; };
+		80C97BC51DDD83A200F8828E /* MBProgressHUD+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +150,7 @@
 		55B2B3C51DCAFAD400197A38 /* YXCategories */ = {
 			isa = PBXGroup;
 			children = (
+				80C97BBB1DDD836D00F8828E /* MBProgressHUD */,
 				55F028D21DD44DA4009C0F73 /* Foundation */,
 				55F028DB1DD44DA4009C0F73 /* UIKit */,
 				55F0289F1DD31C20009C0F73 /* YXCategories.h */,
@@ -203,6 +212,18 @@
 				255944569D970B45849C97D2 /* libPods-YXCategoriesDemo.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80C97BBB1DDD836D00F8828E /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				80C97BBE1DDD836D00F8828E /* MBProgressHUD.bundle */,
+				80C97BBF1DDD836D00F8828E /* MBProgressHUD.h */,
+				80C97BC01DDD836D00F8828E /* MBProgressHUD.m */,
+				80C97BC41DDD83A200F8828E /* MBProgressHUD+Extension.h */,
+				80C97BC51DDD83A200F8828E /* MBProgressHUD+Extension.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		9D7DF4613BF2666D10B7BBB1 /* Pods */ = {
@@ -277,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				554694DB1DCADC45004CCF43 /* LaunchScreen.storyboard in Resources */,
+				80C97BC21DDD836D00F8828E /* MBProgressHUD.bundle in Resources */,
 				554694D81DCADC45004CCF43 /* Assets.xcassets in Resources */,
 				554694D61DCADC45004CCF43 /* Main.storyboard in Resources */,
 			);
@@ -338,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55F028FB1DD44DA4009C0F73 /* UIView+Extension.m in Sources */,
+				80C97BC61DDD83A200F8828E /* MBProgressHUD+Extension.m in Sources */,
 				55F028F61DD44DA4009C0F73 /* UICollectionView+Extension.m in Sources */,
 				55471D3E1DD5C6EB00F20E89 /* UILabel+StringFrame.m in Sources */,
 				55F028FA1DD44DA4009C0F73 /* UITableView+Extension.m in Sources */,
@@ -352,6 +375,7 @@
 				55F028F11DD44DA4009C0F73 /* NSNotificationCenter+Extension.m in Sources */,
 				55F028F41DD44DA4009C0F73 /* UIBarButtonItem+Extension.m in Sources */,
 				55F028F01DD44DA4009C0F73 /* NSBundle+Extension.m in Sources */,
+				80C97BC31DDD836D00F8828E /* MBProgressHUD.m in Sources */,
 				554694CD1DCADC45004CCF43 /* main.m in Sources */,
 				55F028F51DD44DA4009C0F73 /* UIButton+Extension.m in Sources */,
 				8017312C1DDAB275002D6F74 /* UITextField+Extension.m in Sources */,
