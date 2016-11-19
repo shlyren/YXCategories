@@ -55,15 +55,15 @@
     [self addGestureRecognizer:tap];
 }
 
-static char *kTapAction = "kTapAction";
+static char YXTapAction = '\0';
 - (void)setAction:(void (^)(UIView *))action
 {
-    objc_setAssociatedObject(self, kTapAction, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &YXTapAction, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (void (^)(UIView *))action
 {
-    return objc_getAssociatedObject(self, kTapAction);
+    return objc_getAssociatedObject(self, &YXTapAction);
 }
 
 - (void)viewTap

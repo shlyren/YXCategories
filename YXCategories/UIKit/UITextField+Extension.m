@@ -26,15 +26,15 @@
     [self addTarget:self action:@selector(editingChanged:) forControlEvents:UIControlEventEditingChanged];
 }
 
-static char *kEditingChangedAction = "kEditingChangedAction";
+static char YXEditingChangedAction = '\0';
 - (void)setEditingChanged:(void (^)(UITextField *))editingChanged
 {
-    objc_setAssociatedObject(self, kEditingChangedAction, editingChanged, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &YXEditingChangedAction, editingChanged, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (void (^)(UITextField *))editingChanged
 {
-    return objc_getAssociatedObject(self, kEditingChangedAction);
+    return objc_getAssociatedObject(self, &YXEditingChangedAction);
 }
 
 - (void)editingChanged:(UITextField *)tf

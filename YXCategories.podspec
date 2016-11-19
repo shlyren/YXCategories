@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "YXCategories"
-  s.version      = "1.4.2"
+  s.version      = "1.5.0"
   s.summary      = "自己使用的分类"
   s.homepage     = "https://github.com/shlyren/YXCategories"
   s.license      = "MIT"
@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
   s.requires_arc =  true
   s.public_header_files = 'YXCategories/YXCategories.h'
   s.source_files = "YXCategories/YXCategories.h"
+  s.resource     = 'YXCategories/MBProgressHUD/MBProgressHUD.bundle'
 
   s.subspec 'Foundation' do |ss|
   ss.source_files = 'YXCategories/Foundation/*.{h,m}'
@@ -19,5 +20,9 @@ Pod::Spec.new do |s|
 
   s.subspec 'UIKit' do |ss|
   ss.source_files = 'YXCategories/UIKit/*.{h,m}'
+  end
+  
+  s.subspec 'MBProgressHUD' do |ss|
+  ss.source_files = 'YXCategories/MBProgressHUD/*.{h,m}'
   end
 end

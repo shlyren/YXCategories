@@ -26,7 +26,6 @@
      pod trunk push YXCategories.podspec --allow-warnings
      
      */
-    
     [self.btn addTouchUpInsideAction:^(UIButton *button) {
        
         NSLog(@"\n%@ \n%@",self.btn, button);
@@ -37,17 +36,11 @@
         NSLog(@"\n%@ \n%@",self.tf, textField);
     }];
     
-    UIView *sv = self.view;
+    __weak UIView *sv = self.view;
     [self.view addTapAction:^(UIView *view) {
         NSLog(@"\n%@ \n%@",sv, view);
+         [MBProgressHUD showTitle:@"YXCategories"];
     }];
-    
-}
-
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [MBProgressHUD showTitle:@"test"];
     
 }
 

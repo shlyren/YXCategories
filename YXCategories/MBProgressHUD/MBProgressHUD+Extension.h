@@ -32,7 +32,6 @@ typedef NS_ENUM(NSInteger, MBProgressHUDType) {
 + (void)showSuccess:(NSString *)success;
 + (void)showError:(NSString *)error;
 + (MBProgressHUD *)showMessage:(NSString *)message;
-
 /**
  展示一个没有图片只有文字的提示框
  

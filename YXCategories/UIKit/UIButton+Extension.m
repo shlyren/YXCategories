@@ -151,7 +151,7 @@
 
 
 #pragma mark - action
-static char *kTouchUpInsideAction = "kTouchUpInsideAction";
+static char YXTouchUpInsideAction = '\0';
 - (void)setAction:(void (^)(UIButton *))action
 {
     /*
@@ -161,12 +161,12 @@ static char *kTouchUpInsideAction = "kTouchUpInsideAction";
      参数3: id value : 属性值
      参数4: 策略, 是个枚举(点进去,解释很详细)
      */
-    objc_setAssociatedObject(self, kTouchUpInsideAction,action , OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &YXTouchUpInsideAction, action , OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (void (^)(UIButton *))action
 {
-    return objc_getAssociatedObject(self, kTouchUpInsideAction);
+    return objc_getAssociatedObject(self, &YXTouchUpInsideAction);
 }
 
 /**
