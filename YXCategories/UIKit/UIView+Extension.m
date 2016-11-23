@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 
 @interface UIView ()
-@property (nonatomic, copy) void (^action)(UIView *);
+@property (nonatomic, copy) void (^action)(__kindof UIView *);
 @end
 
 @implementation UIView (Extension)
@@ -48,7 +48,7 @@
 
 
 #pragma mark - action
-- (void)addTapAction:(void (^)(UIView *view))action
+- (void)addTapAction:(void (^)(__kindof UIView *view))action
 {
     self.action = action;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTap)];
@@ -56,12 +56,12 @@
 }
 
 static char YXTapAction = '\0';
-- (void)setAction:(void (^)(UIView *))action
+- (void)setAction:(void (^)(__kindof UIView *))action
 {
     objc_setAssociatedObject(self, &YXTapAction, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (void (^)(UIView *))action
+- (void (^)(__kindof UIView *))action
 {
     return objc_getAssociatedObject(self, &YXTapAction);
 }

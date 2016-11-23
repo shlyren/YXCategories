@@ -40,6 +40,26 @@
     }
 }
 
+- (void)tableViewShowActivityIndicatorViewWithRows:(NSInteger)row;
+{
+    if (row == 0)
+    {
+        // Display a message when the table is empty
+        // 没无数据的时分，UILabel的表现款式
+        
+        UIActivityIndicatorView *indView = [UIActivityIndicatorView new];
+        indView.frame = CGRectMake((self.frame.size.width - 30) * 0.5, (self.frame.size.height - 30) * 0.5, 30, 30);
+        self.backgroundView = indView;
+        self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    else
+    {
+        self.backgroundView = nil;
+        self.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    }
+
+}
+
 
 - (void)tableViewShowImage:(NSString *)imageName numberOfRows:(NSInteger)rowCount;
 {

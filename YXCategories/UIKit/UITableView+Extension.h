@@ -18,6 +18,9 @@
  */
 - (void)tableViewShowMessage:(NSString *)message numberOfRows:(NSInteger)rowCount;
 
+
+- (void)tableViewShowActivityIndicatorViewWithRows:(NSInteger)row;
+
 /**
  *  没有内容时显示一张图片
  *

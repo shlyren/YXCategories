@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "YXCategories"
-  s.version      = "1.5.0"
+  s.version      = "1.5.1"
   s.summary      = "自己使用的分类"
   s.homepage     = "https://github.com/shlyren/YXCategories"
   s.license      = "MIT"

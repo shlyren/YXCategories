@@ -29,5 +29,5 @@
 
  @param action 事件
  */
-- (void)addTapAction:(void (^)(UIView *view))action;
+- (void)addTapAction:(void (^)(__kindof UIView *view))action;
 @end

@@ -35,7 +35,8 @@
 /** md5加密 */
 @property (nonatomic, strong, readonly) NSString *md5;
 
-/** 字符串 -> UIColor
+/** 
+ 字符串 -> UIColor
  支持@“#123456”、 @“0X123456”、 @“123456”三种格式
  */
 @property (nonatomic, strong, readonly) UIColor *color;
