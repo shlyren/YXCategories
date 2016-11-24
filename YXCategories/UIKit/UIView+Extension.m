@@ -11,6 +11,7 @@
 
 @interface UIView ()
 @property (nonatomic, copy) void (^action)(__kindof UIView *);
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
 @end
 
 @implementation UIView (Extension)
@@ -51,8 +52,39 @@
 - (void)addTapAction:(void (^)(__kindof UIView *view))action
 {
     self.action = action;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTap)];
-    [self addGestureRecognizer:tap];
+    self.userInteractionEnabled = true;
+    self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTap)];
+    [self addGestureRecognizer:self.tap];
+}
+
+- (void)removeTapAction
+{
+    if (self.tap) {
+        [self.tap removeTarget:self action:@selector(viewTap)];
+        [self removeGestureRecognizer:self.tap];
+        self.tap = nil;
+    }
+    if (self.action) {
+        self.action = nil;
+    }
+    
+//    objc_removeAssociatedObjects(self);
+    
+    if ([self isKindOfClass:[UILabel class]] || [self isKindOfClass:[UIImageView class]])
+    {
+        self.userInteractionEnabled = false;
+    }
+}
+
+static char YXTapGes = '\0';
+- (void)setTap:(UITapGestureRecognizer *)tap
+{
+    objc_setAssociatedObject(self, &YXTapGes, tap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UITapGestureRecognizer *)tap
+{
+    return objc_getAssociatedObject(self, &YXTapGes);
 }
 
 static char YXTapAction = '\0';

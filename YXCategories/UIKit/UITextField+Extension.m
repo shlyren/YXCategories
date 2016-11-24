@@ -25,6 +25,13 @@
     self.editingChanged = action;
     [self addTarget:self action:@selector(editingChanged:) forControlEvents:UIControlEventEditingChanged];
 }
+- (void)removeEditingChangedAction
+{
+    [self removeTarget:self action:@selector(editingChanged:) forControlEvents:UIControlEventEditingChanged];
+    if (self.editingChanged) {
+        self.editingChanged = nil;
+    }
+}
 
 static char YXEditingChangedAction = '\0';
 - (void)setEditingChanged:(void (^)(UITextField *))editingChanged

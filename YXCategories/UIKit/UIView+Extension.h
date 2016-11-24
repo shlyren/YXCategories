@@ -30,4 +30,6 @@
  @param action 事件
  */
 - (void)addTapAction:(void (^)(__kindof UIView *view))action;
+
+- (void)removeTapAction;
 @end

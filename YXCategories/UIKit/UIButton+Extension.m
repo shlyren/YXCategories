@@ -180,6 +180,14 @@ static char YXTouchUpInsideAction = '\0';
     [self addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)removeTouchUpInsideAction
+{
+    [self removeTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    if (self.action) {
+        self.action = nil;
+    }
+}
+
 - (void)buttonClick:(UIButton *)btn
 {
     if (self.action) {

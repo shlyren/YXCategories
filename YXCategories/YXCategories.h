@@ -15,8 +15,6 @@
  
  无头骑士 GJ is me       http://misaka14.com
  
- 丨柠萌酱丶 is me        http://ningmengjiang.com
- 
  任玉祥 && JiaQi is me  http://shyren.com
  
  yuxiang.ren is me     http://yuxiang.ren

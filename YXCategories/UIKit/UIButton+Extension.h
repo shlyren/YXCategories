@@ -58,4 +58,6 @@
  @param action 事件回调
  */
 - (void)addTouchUpInsideAction:(void (^)(UIButton *button))action;
+
+- (void)removeTouchUpInsideAction;
 @end

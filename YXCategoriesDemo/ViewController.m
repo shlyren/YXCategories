@@ -13,6 +13,7 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *tf;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIButton *btn;
 @end
 
@@ -26,22 +27,39 @@
      pod trunk push YXCategories.podspec --allow-warnings
      
      */
-    [self.btn addTouchUpInsideAction:^(UIButton *button) {
-       
-        NSLog(@"\n%@ \n%@",self.btn, button);
-        
-    }];
+
     
-    [self.tf addEditingChangedAction:^(UITextField *textField) {
-        NSLog(@"\n%@ \n%@",self.tf, textField);
-    }];
+
     
-    __weak UIView *sv = self.view;
-    [self.view addTapAction:^(UIView *view) {
-        NSLog(@"\n%@ \n%@",sv, view);
-         [MBProgressHUD showTitle:@"YXCategories"];
-    }];
+//    __weak UIView *sv = self.view;
+//    [self.view addTapAction:^(UIView *view) {
+//        NSLog(@"\n%@ \n%@",sv, view);
+//         [MBProgressHUD showTitle:@"YXCategories"];
+//    }];
     
+}
+- (IBAction)remove
+{
+//   [self.btn removeTapAction];
+//    [self.view removeTapAction];
+    [self.tf removeEditingChangedAction];
+
+}
+
+- (IBAction)add
+{
+    
+//    [self.btn addTouchUpInsideAction:^(UIButton *button) {
+//        NSLog(@"\n%@ \n%@",self.btn, button);
+//    }];
+//    
+//            [self.view addTapAction:^(__kindof UIView *view) {
+//                NSLog(@"\n%@", view);
+//            }];
+    
+        [self.tf addEditingChangedAction:^(UITextField *textField) {
+            NSLog(@"\n%@ \n%@",self.tf, textField);
+        }];
 }
 
 

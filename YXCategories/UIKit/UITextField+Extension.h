@@ -16,4 +16,6 @@
  @param action 回调
  */
 - (void)addEditingChangedAction:(void (^)(UITextField *textField))action;
+
+- (void)removeEditingChangedAction;
 @end
