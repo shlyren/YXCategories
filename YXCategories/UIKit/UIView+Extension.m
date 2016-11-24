@@ -12,6 +12,8 @@
 @interface UIView ()
 @property (nonatomic, copy) void (^action)(__kindof UIView *);
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
+/** 默认的的用户交互 */
+@property (nonatomic, assign) BOOL defultUserInteractionEnabled;
 @end
 
 @implementation UIView (Extension)
@@ -52,7 +54,10 @@
 - (void)addTapAction:(void (^)(__kindof UIView *view))action
 {
     self.action = action;
+    self.defultUserInteractionEnabled = self.userInteractionEnabled;
+    
     self.userInteractionEnabled = true;
+    
     self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTap)];
     [self addGestureRecognizer:self.tap];
 }
@@ -70,10 +75,18 @@
     
 //    objc_removeAssociatedObjects(self);
     
-    if ([self isKindOfClass:[UILabel class]] || [self isKindOfClass:[UIImageView class]])
-    {
-        self.userInteractionEnabled = false;
-    }
+    self.userInteractionEnabled = self.defultUserInteractionEnabled;
+}
+
+static char YXDefultUserInteractionEnabled = '\n';
+- (void)setDefultUserInteractionEnabled:(BOOL)defultUserInteractionEnabled
+{
+    objc_setAssociatedObject(self, &YXDefultUserInteractionEnabled, @(defultUserInteractionEnabled), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (BOOL)defultUserInteractionEnabled
+{
+    return [objc_getAssociatedObject(self, &YXDefultUserInteractionEnabled) boolValue];
 }
 
 static char YXTapGes = '\0';

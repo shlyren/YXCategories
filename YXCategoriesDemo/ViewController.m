@@ -27,27 +27,22 @@
      pod trunk push YXCategories.podspec --allow-warnings
      
      */
-
-    
-
-    
-//    __weak UIView *sv = self.view;
-//    [self.view addTapAction:^(UIView *view) {
-//        NSLog(@"\n%@ \n%@",sv, view);
-//         [MBProgressHUD showTitle:@"YXCategories"];
-//    }];
     
 }
 - (IBAction)remove
 {
 //   [self.btn removeTapAction];
 //    [self.view removeTapAction];
-    [self.tf removeEditingChangedAction];
+//    [self.tf removeEditingChangedAction];
+    [self.label removeTapAction];
 
 }
 
 - (IBAction)add
 {
+    [self.label addTapAction:^(__kindof UIView *view) {
+        NSLog(@"\n%@",view);
+    }];
     
 //    [self.btn addTouchUpInsideAction:^(UIButton *button) {
 //        NSLog(@"\n%@ \n%@",self.btn, button);
@@ -57,9 +52,9 @@
 //                NSLog(@"\n%@", view);
 //            }];
     
-        [self.tf addEditingChangedAction:^(UITextField *textField) {
-            NSLog(@"\n%@ \n%@",self.tf, textField);
-        }];
+//        [self.tf addEditingChangedAction:^(UITextField *textField) {
+//            NSLog(@"\n%@ \n%@",self.tf, textField);
+//        }];
 }
 
 
