@@ -78,7 +78,7 @@
     self.userInteractionEnabled = self.defultUserInteractionEnabled;
 }
 
-static char YXDefultUserInteractionEnabled = '\n';
+static char YXDefultUserInteractionEnabled = '\0';
 - (void)setDefultUserInteractionEnabled:(BOOL)defultUserInteractionEnabled
 {
     objc_setAssociatedObject(self, &YXDefultUserInteractionEnabled, @(defultUserInteractionEnabled), OBJC_ASSOCIATION_ASSIGN);
