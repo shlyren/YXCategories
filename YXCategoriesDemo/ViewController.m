@@ -50,12 +50,18 @@
 //    
 //            [self.view addTapAction:^(__kindof UIView *view) {
 //                NSLog(@"\n%@", view);
-//            }];
+//            }];b
     
 //        [self.tf addEditingChangedAction:^(UITextField *textField) {
 //            NSLog(@"\n%@ \n%@",self.tf, textField);
 //        }];
 }
 
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"string  %@,  %zd", [UIDevice deviceModeString], [UIDevice belongTo:iPhone2G | iPhone7]);
+
+}
 
 @end

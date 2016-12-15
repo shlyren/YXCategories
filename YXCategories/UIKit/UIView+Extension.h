@@ -11,11 +11,17 @@
 @interface UIView (Extension)
 
 /**
- 把view加入到window
- 
- @return 是否成功
+ 获取view的控制器
+ @return 控制器
  */
-- (BOOL)addWindow;
+- (__kindof UIViewController *)viewController;
+
+/**
+ 把view加入到window
+ */
+- (void)addWindow;
+
+- (UIWindow *)lastWindow;
 
 /**
  从xib加载view

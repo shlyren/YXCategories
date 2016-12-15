@@ -17,33 +17,41 @@
 @end
 
 @implementation UIView (Extension)
+- (__kindof UIViewController *)viewController
+{
+    for (UIView *next = [self superview]; next; next = next.superview)
+    {
+        UIResponder *nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]])
+            return (__kindof UIViewController *)nextResponder;
+    }
+    return nil;
+}
 
 /**
  把view加入到window
  
- @return 是否成功
  */
-- (BOOL)addWindow
+- (void)addWindow
 {
-    NSEnumerator *frontToBackWindows = [UIApplication.sharedApplication.windows reverseObjectEnumerator];
-    for (UIWindow *window in frontToBackWindows)
-    {
-        BOOL windowOnMainScreen = window.screen == UIScreen.mainScreen;
-        BOOL windowIsVisible = !window.hidden && window.alpha > 0;
-        BOOL windowLevelNormal = window.windowLevel == UIWindowLevelNormal;
+    
+    [self.lastWindow addSubview: self];
+}
+
+- (UIWindow *)lastWindow
+{
+    NSArray *windows = [UIApplication sharedApplication].windows;
+    for(UIWindow *window in [windows reverseObjectEnumerator]) {
         
-        if(windowOnMainScreen && windowIsVisible && windowLevelNormal)
-        {
-            [window addSubview:self];
-            return true;
-        }
+        if ([window isKindOfClass:[UIWindow class]] &&
+            CGRectEqualToRect(window.bounds, [UIScreen mainScreen].bounds))
+            
+            return window;
     }
     
-#ifdef DEBUG
-    NSLog(@"%@ 无法添加到window", self);
-#endif
-    return false;
+    return [UIApplication sharedApplication].keyWindow;
 }
+
 + (NSArray<__kindof UIView*>*)loadViewsFromNib
 {
     return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil];

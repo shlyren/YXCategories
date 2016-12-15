@@ -31,6 +31,7 @@
 		55F028FD1DD44DA4009C0F73 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028EF1DD44DA4009C0F73 /* UIViewController+Extension.m */; };
 		7572357BCA97CEED4977A646 /* libPods-YXCategoriesDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 255944569D970B45849C97D2 /* libPods-YXCategoriesDemo.a */; };
 		8017312C1DDAB275002D6F74 /* UITextField+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8017312B1DDAB275002D6F74 /* UITextField+Extension.m */; };
+		8095E9EE1DF65CCF00E0F037 /* NSTimer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095E9ED1DF65CCF00E0F037 /* NSTimer+Extension.m */; };
 		80C97BC21DDD836D00F8828E /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 80C97BBE1DDD836D00F8828E /* MBProgressHUD.bundle */; };
 		80C97BC31DDD836D00F8828E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BC01DDD836D00F8828E /* MBProgressHUD.m */; };
 		80C97BC61DDD83A200F8828E /* MBProgressHUD+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BC51DDD83A200F8828E /* MBProgressHUD+Extension.m */; };
@@ -85,6 +86,8 @@
 		55F028EF1DD44DA4009C0F73 /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		8017312A1DDAB275002D6F74 /* UITextField+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Extension.h"; sourceTree = "<group>"; };
 		8017312B1DDAB275002D6F74 /* UITextField+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Extension.m"; sourceTree = "<group>"; };
+		8095E9EC1DF65CCF00E0F037 /* NSTimer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Extension.h"; sourceTree = "<group>"; };
+		8095E9ED1DF65CCF00E0F037 /* NSTimer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Extension.m"; sourceTree = "<group>"; };
 		80C97BBE1DDD836D00F8828E /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		80C97BBF1DDD836D00F8828E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		80C97BC01DDD836D00F8828E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -169,6 +172,8 @@
 				55F028D81DD44DA4009C0F73 /* NSString+Extension.m */,
 				55F028D91DD44DA4009C0F73 /* NSUserDefaults+Extension.h */,
 				55F028DA1DD44DA4009C0F73 /* NSUserDefaults+Extension.m */,
+				8095E9EC1DF65CCF00E0F037 /* NSTimer+Extension.h */,
+				8095E9ED1DF65CCF00E0F037 /* NSTimer+Extension.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				55F028F11DD44DA4009C0F73 /* NSNotificationCenter+Extension.m in Sources */,
 				55F028F41DD44DA4009C0F73 /* UIBarButtonItem+Extension.m in Sources */,
 				55F028F01DD44DA4009C0F73 /* NSBundle+Extension.m in Sources */,
+				8095E9EE1DF65CCF00E0F037 /* NSTimer+Extension.m in Sources */,
 				80C97BC31DDD836D00F8828E /* MBProgressHUD.m in Sources */,
 				554694CD1DCADC45004CCF43 /* main.m in Sources */,
 				55F028F51DD44DA4009C0F73 /* UIButton+Extension.m in Sources */,
