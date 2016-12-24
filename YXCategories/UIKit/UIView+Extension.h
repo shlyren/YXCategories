@@ -30,12 +30,16 @@
  */
 + (NSArray<__kindof UIView*>*)loadViewsFromNib;
 
+@end
+
+@interface UIView (Action)
+
 /**
  给uiview添加点击事件
-
+ 
  @param action 事件
  */
-- (void)addTapAction:(void (^)(__kindof UIView *view))action;
+- (void)addTapAction:(void (^)())action;
 
 - (void)removeTapAction;
 @end

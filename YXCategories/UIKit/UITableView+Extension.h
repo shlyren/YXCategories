@@ -2,8 +2,8 @@
 //  UITableView+Extension.h
 //  tableView扩展
 //
-//  Created by 丨柠萌酱丶 on 16/3/9.
-//  Copyright © 2016年 丨柠萌酱丶. All rights reserved.
+//  Created by 任玉祥 on 16/3/9.
+//  Copyright © 2016年 任玉祥. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

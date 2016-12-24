@@ -7,11 +7,6 @@
 //
 
 #import "UIButton+Extension.h"
-#import <objc/runtime.h>
-
-@interface UIButton ()
-@property (nonatomic, copy) void (^action)(__kindof UIButton *button);
-@end
 
 @implementation UIButton (Extension)
 #pragma mark - title
@@ -150,9 +145,20 @@
 }
 
 
+@end
+
 #pragma mark - action
+
+#import <objc/runtime.h>
+
+@interface UIButton ()
+@property (nonatomic, copy) void (^action)();
+@end
+
+@implementation UIButton (Action)
+
 static char YXTouchUpInsideAction = '\0';
-- (void)setAction:(void (^)(__kindof UIButton *))action
+- (void)setAction:(void (^)())action
 {
     /*
      产生关联,让某个对象(name)与当前对象的属性(name)产生关联
@@ -164,7 +170,7 @@ static char YXTouchUpInsideAction = '\0';
     objc_setAssociatedObject(self, &YXTouchUpInsideAction, action , OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (void (^)(__kindof UIButton *))action
+- (void (^)())action
 {
     return objc_getAssociatedObject(self, &YXTouchUpInsideAction);
 }
@@ -174,24 +180,25 @@ static char YXTouchUpInsideAction = '\0';
  event == UIControlEventTouchUpInside
  @param action 事件 block
  */
-- (void)addTouchUpInsideAction:(void (^)(__kindof UIButton *button))action
+- (void)addTouchUpInsideAction:(void (^)())action
 {
     self.action = action;
-    [self addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)removeTouchUpInsideAction
 {
-    [self removeTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self removeTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
     if (self.action) {
         self.action = nil;
     }
 }
 
-- (void)buttonClick:(__kindof UIButton *)btn
+- (void)buttonClick
 {
     if (self.action) {
-        self.action(btn);
+        self.action();
     }
 }
+
 @end

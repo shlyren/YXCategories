@@ -2,7 +2,7 @@
 //  UITextField+Extension.h
 //  YXCategoriesDemo
 //
-//  Created by JiaQi on 2016/11/15.
+//  Created by 任玉祥 on 2016/11/15.
 //  Copyright © 2016年 任玉祥. All rights reserved.
 //
 
@@ -15,7 +15,7 @@
  event == UIControlEventEditingChanged
  @param action 回调
  */
-- (void)addEditingChangedAction:(void (^)(UITextField *textField))action;
+- (void)addEditingChangedAction:(void (^)())action;
 
 - (void)removeEditingChangedAction;
 @end

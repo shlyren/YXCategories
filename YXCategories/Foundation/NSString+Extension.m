@@ -99,6 +99,16 @@
     return isMatch;
 }
 
+- (BOOL)isUrlString
+{
+        
+    NSString *regex = @"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)|(www.[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+
+    BOOL isMatch = [pred evaluateWithObject:self];
+    return isMatch;
+}
+
 
 /**
  获取今年的字符串
@@ -240,6 +250,6 @@
  */
 - (CGRect)textRectWithSize:(CGSize)size attributes:(NSDictionary *)attributes
 {
-    return [self boundingRectWithSize:size options:  NSStringDrawingUsesLineFragmentOrigin attributes: attributes context: nil];
+    return [self boundingRectWithSize:size options: NSStringDrawingUsesLineFragmentOrigin attributes: attributes context: nil];
 }
 @end

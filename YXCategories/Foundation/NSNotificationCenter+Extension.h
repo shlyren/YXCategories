@@ -63,7 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param aName 通知名
  @param anObject 发布者
  */
-+ (void)addObserver:(id)observer selector:(SEL)aSelector name:(NSNotificationName)aName object:(id)anObject;
++ (void)addObserver:(id)observer selector:(SEL)aSelector name:(nullable NSNotificationName)aName object:(nullable id)anObject;
 
 @end
 NS_ASSUME_NONNULL_END

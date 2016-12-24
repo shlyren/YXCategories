@@ -1,9 +1,9 @@
 //
 //  UICollectionVew+Extension.h
-//  驴宝宝
+//   
 //
 //  Created by 任玉祥 on 2016/10/25.
-//  Copyright © 2016年 yuxiang.ren. All rights reserved.
+//  Copyright © 2016年  任玉祥. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

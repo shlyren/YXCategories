@@ -51,13 +51,17 @@
 @property (nonatomic, strong) UIImage *disabledBgImg;
 
 
+@end
+
 #pragma mark - action
+@interface UIButton (Action)
+
 /**
  给按钮添加事件
  event == UIControlEventTouchUpInside
  @param action 事件回调
  */
-- (void)addTouchUpInsideAction:(void (^)(__kindof UIButton *button))action;
+- (void)addTouchUpInsideAction:(void (^)())action;
 
 - (void)removeTouchUpInsideAction;
 @end

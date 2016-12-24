@@ -104,6 +104,17 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 
 #pragma mark - Class methods
 
+//+ (instancetype)shared
+//{
+//    static MBProgressHUD *_hud;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        _hud = [MBProgressHUD alloc];
+//    });
+//    
+//    return _hud;
+//}
+
 + (MB_INSTANCETYPE)showHUDAddedTo:(UIView *)view animated:(BOOL)animated {
 	MBProgressHUD *hud = [[self alloc] initWithView:view];
 	[view addSubview:hud];

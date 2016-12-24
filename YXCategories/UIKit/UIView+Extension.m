@@ -7,14 +7,6 @@
 //
 
 #import "UIView+Extension.h"
-#import <objc/runtime.h>
-
-@interface UIView ()
-@property (nonatomic, copy) void (^action)(__kindof UIView *);
-@property (nonatomic, strong) UITapGestureRecognizer *tap;
-/** 默认的的用户交互 */
-@property (nonatomic, assign) BOOL defultUserInteractionEnabled;
-@end
 
 @implementation UIView (Extension)
 - (__kindof UIViewController *)viewController
@@ -34,7 +26,6 @@
  */
 - (void)addWindow
 {
-    
     [self.lastWindow addSubview: self];
 }
 
@@ -43,9 +34,7 @@
     NSArray *windows = [UIApplication sharedApplication].windows;
     for(UIWindow *window in [windows reverseObjectEnumerator]) {
         
-        if ([window isKindOfClass:[UIWindow class]] &&
-            CGRectEqualToRect(window.bounds, [UIScreen mainScreen].bounds))
-            
+        if ([window isKindOfClass:[UIWindow class]] &&  CGRectEqualToRect(window.bounds, [UIScreen mainScreen].bounds))
             return window;
     }
     
@@ -57,11 +46,22 @@
     return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil];
 }
 
+@end
 
 #pragma mark - action
-- (void)addTapAction:(void (^)(__kindof UIView *view))action
+#import <objc/runtime.h>
+@interface UIView ()
+@property (nonatomic, copy) void (^tapActionBlock)();
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
+/** 默认的的用户交互 */
+@property (nonatomic, assign) BOOL defultUserInteractionEnabled;
+@end
+
+@implementation UIView (Action)
+
+- (void)addTapAction:(void (^)())action
 {
-    self.action = action;
+    self.tapActionBlock = action;
     self.defultUserInteractionEnabled = self.userInteractionEnabled;
     
     self.userInteractionEnabled = true;
@@ -77,11 +77,11 @@
         [self removeGestureRecognizer:self.tap];
         self.tap = nil;
     }
-    if (self.action) {
-        self.action = nil;
+    if (self.tapActionBlock) {
+        self.tapActionBlock = nil;
     }
     
-//    objc_removeAssociatedObjects(self);
+    //    objc_removeAssociatedObjects(self);
     
     self.userInteractionEnabled = self.defultUserInteractionEnabled;
 }
@@ -109,21 +109,23 @@ static char YXTapGes = '\0';
 }
 
 static char YXTapAction = '\0';
-- (void)setAction:(void (^)(__kindof UIView *))action
+- (void)setTapActionBlock:(void (^)())tapActionBlock
 {
-    objc_setAssociatedObject(self, &YXTapAction, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &YXTapAction, tapActionBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (void (^)(__kindof UIView *))action
+- (void (^)())tapActionBlock
 {
     return objc_getAssociatedObject(self, &YXTapAction);
 }
 
 - (void)viewTap
 {
-    if (self.action) {
-        self.action(self);
+    if (self.tapActionBlock) {
+        self.tapActionBlock();
     }
 }
+
+
 
 @end

@@ -2,7 +2,7 @@
 //  UITextField+Extension.m
 //  YXCategoriesDemo
 //
-//  Created by JiaQi on 2016/11/15.
+//  Created by 任玉祥 on 2016/11/15.
 //  Copyright © 2016年 任玉祥. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 
 @interface UITextField ()
-@property (nonatomic, copy) void (^editingChanged)(UITextField *);
+@property (nonatomic, copy) void (^editingChangedBlock)();
 @end
 
 @implementation UITextField (Extension)
@@ -20,34 +20,34 @@
  event == UIControlEventEditingChanged
  @param action 回调
  */
-- (void)addEditingChangedAction:(void (^)(UITextField *textField))action;
+- (void)addEditingChangedAction:(void (^)())action;
 {
-    self.editingChanged = action;
-    [self addTarget:self action:@selector(editingChanged:) forControlEvents:UIControlEventEditingChanged];
+    self.editingChangedBlock = action;
+    [self addTarget:self action:@selector(editingChanged) forControlEvents:UIControlEventEditingChanged];
 }
 - (void)removeEditingChangedAction
 {
-    [self removeTarget:self action:@selector(editingChanged:) forControlEvents:UIControlEventEditingChanged];
-    if (self.editingChanged) {
-        self.editingChanged = nil;
+    [self removeTarget:self action:@selector(editingChanged) forControlEvents:UIControlEventEditingChanged];
+    if (self.editingChangedBlock) {
+        self.editingChangedBlock = nil;
     }
 }
 
 static char YXEditingChangedAction = '\0';
-- (void)setEditingChanged:(void (^)(UITextField *))editingChanged
+- (void)setEditingChangedBlock:(void (^)())editingChanged
 {
     objc_setAssociatedObject(self, &YXEditingChangedAction, editingChanged, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (void (^)(UITextField *))editingChanged
+- (void (^)())editingChangedBlock
 {
     return objc_getAssociatedObject(self, &YXEditingChangedAction);
 }
 
-- (void)editingChanged:(UITextField *)tf
+- (void)editingChanged
 {
-    if (self.editingChanged) {
-        self.editingChanged(tf);
+    if (self.editingChangedBlock) {
+        self.editingChangedBlock();
     }
 }
 @end

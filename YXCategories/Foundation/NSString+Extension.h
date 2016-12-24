@@ -26,6 +26,9 @@
 /** 验证金额是否合法 支持0 0.0 0.00 两位小数  */
 @property (nonatomic, assign, readonly, getter=isMoney) BOOL money;
 
+/** 验证url是否合法 */
+@property (nonatomic, assign, readonly, getter=isUrlString) BOOL urlString;
+
 /** 获取今年的字符串 */
 @property (class, nonatomic, strong, readonly) NSString *currentYear;
 
