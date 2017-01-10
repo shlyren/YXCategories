@@ -23,7 +23,7 @@
 #import "NSString+Extension.h"
 #import "NSUserDefaults+Extension.h"
 #import "NSNotificationCenter+Extension.h"
-
+#import "NSObject+Extension.h"
 
 #import "UICollectionView+Extension.h"
 #import "UITableView+Extension.h"

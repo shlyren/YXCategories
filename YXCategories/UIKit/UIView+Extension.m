@@ -34,7 +34,7 @@
     NSArray *windows = [UIApplication sharedApplication].windows;
     for(UIWindow *window in [windows reverseObjectEnumerator]) {
         
-        if ([window isKindOfClass:[UIWindow class]] &&  CGRectEqualToRect(window.bounds, [UIScreen mainScreen].bounds))
+        if ([window isKindOfClass:[UIWindow class]] && CGRectEqualToRect(window.bounds, [UIScreen mainScreen].bounds))
             return window;
     }
     

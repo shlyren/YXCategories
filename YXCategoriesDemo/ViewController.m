@@ -28,6 +28,10 @@
      
      */
     
+    NSObject *one = self;
+    
+    NSLog(@"%zd", [one compareWithObj:self]);
+    
 }
 - (IBAction)remove
 {
