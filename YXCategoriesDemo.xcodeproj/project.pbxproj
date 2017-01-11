@@ -32,7 +32,6 @@
 		7572357BCA97CEED4977A646 /* libPods-YXCategoriesDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 255944569D970B45849C97D2 /* libPods-YXCategoriesDemo.a */; };
 		8017312C1DDAB275002D6F74 /* UITextField+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8017312B1DDAB275002D6F74 /* UITextField+Extension.m */; };
 		803AB32B1E24871200B13634 /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 803AB32A1E24871200B13634 /* NSObject+Extension.m */; };
-		803AB32D1E248E3E00B13634 /* lvbbring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 803AB32C1E248E3E00B13634 /* lvbbring.mp3 */; };
 		8095E9EE1DF65CCF00E0F037 /* NSTimer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095E9ED1DF65CCF00E0F037 /* NSTimer+Extension.m */; };
 		80C97BC21DDD836D00F8828E /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 80C97BBE1DDD836D00F8828E /* MBProgressHUD.bundle */; };
 		80C97BC31DDD836D00F8828E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BC01DDD836D00F8828E /* MBProgressHUD.m */; };
@@ -90,7 +89,6 @@
 		8017312B1DDAB275002D6F74 /* UITextField+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Extension.m"; sourceTree = "<group>"; };
 		803AB3291E24871200B13634 /* NSObject+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extension.h"; sourceTree = "<group>"; };
 		803AB32A1E24871200B13634 /* NSObject+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
-		803AB32C1E248E3E00B13634 /* lvbbring.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lvbbring.mp3; sourceTree = "<group>"; };
 		8095E9EC1DF65CCF00E0F037 /* NSTimer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Extension.h"; sourceTree = "<group>"; };
 		8095E9ED1DF65CCF00E0F037 /* NSTimer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Extension.m"; sourceTree = "<group>"; };
 		80C97BBE1DDD836D00F8828E /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 		554694CA1DCADC45004CCF43 /* YXCategoriesDemo */ = {
 			isa = PBXGroup;
 			children = (
-				803AB32C1E248E3E00B13634 /* lvbbring.mp3 */,
 				554694CE1DCADC45004CCF43 /* AppDelegate.h */,
 				554694CF1DCADC45004CCF43 /* AppDelegate.m */,
 				554694D11DCADC45004CCF43 /* ViewController.h */,
@@ -312,7 +309,6 @@
 			files = (
 				554694DB1DCADC45004CCF43 /* LaunchScreen.storyboard in Resources */,
 				80C97BC21DDD836D00F8828E /* MBProgressHUD.bundle in Resources */,
-				803AB32D1E248E3E00B13634 /* lvbbring.mp3 in Resources */,
 				554694D81DCADC45004CCF43 /* Assets.xcassets in Resources */,
 				554694D61DCADC45004CCF43 /* Main.storyboard in Resources */,
 			);

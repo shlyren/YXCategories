@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#ifdef __OBJC__
 @interface UICollectionView (Extension)
 /**
  xib 注册UICollectionViewCell reuseIdentifier 为cell类名的字符串
@@ -33,3 +33,4 @@
  */
 - (void)registerClass:(Class)cellClass;
 @end
+#endif

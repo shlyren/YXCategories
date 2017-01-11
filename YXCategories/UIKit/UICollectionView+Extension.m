@@ -7,7 +7,7 @@
 //
 
 #import "UICollectionView+Extension.h"
-
+#ifdef __OBJC__
 @implementation UICollectionView (Extension)
 
 /**
@@ -31,3 +31,4 @@
     [self registerClass:cellClass forCellWithReuseIdentifier:NSStringFromClass(cellClass)];
 }
 @end
+#endif

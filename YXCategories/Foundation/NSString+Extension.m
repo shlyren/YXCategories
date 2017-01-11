@@ -127,7 +127,7 @@
  
  @return 当前的时间戳
  */
-+ (long)UnixTime
++ (UInt64)UnixTime
 {
     return [[NSDate date] timeIntervalSince1970] * 1000;
 }

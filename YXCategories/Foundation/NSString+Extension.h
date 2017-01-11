@@ -33,7 +33,7 @@
 @property (class, nonatomic, strong, readonly) NSString *currentYear;
 
 /** 获取当前时间戳  */
-@property (class, nonatomic, assign, readonly) long UnixTime;
+@property (class, nonatomic, assign, readonly) UInt64 UnixTime;
 
 /** md5加密 */
 @property (nonatomic, strong, readonly) NSString *md5;

@@ -36,6 +36,7 @@
 - (void)tableViewSetExtraCellLineHidden;
 
 
+#ifdef __OBJC__
 /**
  xib 注册tableViewCell  reuseIdentifier 为cell类名的字符串
  
@@ -58,4 +59,5 @@
  @return cell
  */
 - (__kindof UITableViewCell *)dequeueReusableCell:(Class)cellClass;
+#endif
 @end

@@ -90,7 +90,7 @@
     
 }
 
-
+#ifdef __OBJC__
 /**
  注册tableViewCell
  
@@ -116,5 +116,7 @@
 {
     return [self dequeueReusableCellWithIdentifier:NSStringFromClass(cellClass)];
 }
+
+#endif
 
 @end
