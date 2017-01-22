@@ -40,6 +40,9 @@
  @param action 事件
  */
 - (void)addTapAction:(void (^)())action;
-
 - (void)removeTapAction;
+
+- (void)addTapTarget:(id)target action:(SEL)action;
+- (void)removeTapTarget:(id)target action:(SEL)action;
+
 @end

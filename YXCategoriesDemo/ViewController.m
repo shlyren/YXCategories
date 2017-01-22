@@ -8,9 +8,9 @@
 
 #import "ViewController.h"
 #import "YXCategories.h"
+@import MessageUI;
 
-
-@interface ViewController ()
+@interface ViewController ()<MFMessageComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *tf;
 @property (weak, nonatomic) IBOutlet UILabel *label;
@@ -25,12 +25,7 @@
     /**
      pod spec lint
      pod trunk push YXCategories.podspec --allow-warnings
-     
      */
-    
-    NSObject *one = self;
-    
-    NSLog(@"%zd", [one compareWithObj:self]);
     
 }
 - (IBAction)remove
@@ -44,21 +39,41 @@
 
 - (IBAction)add
 {
-    [self.label addTapAction:^(__kindof UIView *view) {
-        NSLog(@"\n%@",view);
-    }];
     
-//    [self.btn addTouchUpInsideAction:^(UIButton *button) {
-//        NSLog(@"\n%@ \n%@",self.btn, button);
-//    }];
-//    
-//            [self.view addTapAction:^(__kindof UIView *view) {
-//                NSLog(@"\n%@", view);
-//            }];b
     
-//        [self.tf addEditingChangedAction:^(UITextField *textField) {
-//            NSLog(@"\n%@ \n%@",self.tf, textField);
-//        }];
+    if ([MFMessageComposeViewController canSendText]) {
+        MFMessageComposeViewController *message = [MFMessageComposeViewController new];
+
+        message.messageComposeDelegate = self;
+        message.body = @"短信内容";
+        message.recipients = @[@"18951959661"];
+        [self presentViewController:message animated:true completion:^{
+            
+        }];
+    }else {
+        NSLog(@"不支持发短信");
+    }
+    
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    NSLog(@"%zd", result);
+    
+    switch (result) {
+        case MessageComposeResultCancelled:
+            NSLog(@"取消");
+            break;
+        case MessageComposeResultSent:
+            NSLog(@"发送成功");
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    [controller dismissViewControllerAnimated:true completion:nil];
 }
 
 

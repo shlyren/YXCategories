@@ -28,7 +28,7 @@
         return [(NSIndexPath *)self compare:(NSIndexPath *)obj];
     }
     
-    NSAssert(0, @"%@ is not support yz_compare", NSStringFromClass([self class]));
+    NSAssert(0, @"%@ is not support compareWithObj", NSStringFromClass([self class]));
     
     return NSOrderedSame;
 }

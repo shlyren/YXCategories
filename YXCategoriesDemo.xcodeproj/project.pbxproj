@@ -29,18 +29,18 @@
 		55F028FB1DD44DA4009C0F73 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028EB1DD44DA4009C0F73 /* UIView+Extension.m */; };
 		55F028FC1DD44DA4009C0F73 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028ED1DD44DA4009C0F73 /* UIView+Frame.m */; };
 		55F028FD1DD44DA4009C0F73 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F028EF1DD44DA4009C0F73 /* UIViewController+Extension.m */; };
-		7572357BCA97CEED4977A646 /* libPods-YXCategoriesDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 255944569D970B45849C97D2 /* libPods-YXCategoriesDemo.a */; };
 		8017312C1DDAB275002D6F74 /* UITextField+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8017312B1DDAB275002D6F74 /* UITextField+Extension.m */; };
 		803AB32B1E24871200B13634 /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 803AB32A1E24871200B13634 /* NSObject+Extension.m */; };
 		8095E9EE1DF65CCF00E0F037 /* NSTimer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095E9ED1DF65CCF00E0F037 /* NSTimer+Extension.m */; };
 		80C97BC21DDD836D00F8828E /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 80C97BBE1DDD836D00F8828E /* MBProgressHUD.bundle */; };
 		80C97BC31DDD836D00F8828E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BC01DDD836D00F8828E /* MBProgressHUD.m */; };
 		80C97BC61DDD83A200F8828E /* MBProgressHUD+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C97BC51DDD83A200F8828E /* MBProgressHUD+Extension.m */; };
+		D76E2E081CAE0396A0CD8D44 /* Pods_YXCategoriesDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D4D0F2CDC42956C4F642B1 /* Pods_YXCategoriesDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B180230F60F5EACB9D924F7 /* Pods-YXCategoriesDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YXCategoriesDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YXCategoriesDemo/Pods-YXCategoriesDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		255944569D970B45849C97D2 /* libPods-YXCategoriesDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YXCategoriesDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D4D0F2CDC42956C4F642B1 /* Pods_YXCategoriesDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YXCategoriesDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B06FCD88096E649013B3D25 /* Pods-YXCategoriesDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YXCategoriesDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YXCategoriesDemo/Pods-YXCategoriesDemo.release.xcconfig"; sourceTree = "<group>"; };
 		554694C81DCADC45004CCF43 /* YXCategoriesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YXCategoriesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		554694CC1DCADC45004CCF43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7572357BCA97CEED4977A646 /* libPods-YXCategoriesDemo.a in Frameworks */,
+				D76E2E081CAE0396A0CD8D44 /* Pods_YXCategoriesDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +219,7 @@
 		6D98689C39C0C5DF6F7E0948 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				255944569D970B45849C97D2 /* libPods-YXCategoriesDemo.a */,
+				21D4D0F2CDC42956C4F642B1 /* Pods_YXCategoriesDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -280,6 +280,7 @@
 					554694C71DCADC45004CCF43 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = XJPMR8FRF3;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -521,6 +522,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.YXCategoriesDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -535,6 +537,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ren.yuxiang.YXCategoriesDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

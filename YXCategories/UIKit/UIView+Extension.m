@@ -70,6 +70,22 @@
     [self addGestureRecognizer:self.tap];
 }
 
+- (void)addTapTarget:(id)target action:(SEL)action
+{
+    self.defultUserInteractionEnabled = self.userInteractionEnabled;
+    self.userInteractionEnabled = true;
+    
+    self.tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:@selector(action)];
+    [self addGestureRecognizer:self.tap];
+}
+- (void)removeTapTarget:(id)target action:(SEL)action
+{
+    [self.tap removeTarget:target action:action];
+    [self removeGestureRecognizer:self.tap];
+    self.userInteractionEnabled = self.defultUserInteractionEnabled;
+    self.tap = nil;
+}
+
 - (void)removeTapAction
 {
     if (self.tap) {

@@ -182,6 +182,7 @@ static char YXTouchUpInsideAction = '\0';
  */
 - (void)addTouchUpInsideAction:(void (^)())action
 {
+    
     self.action = action;
     [self addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
 }
