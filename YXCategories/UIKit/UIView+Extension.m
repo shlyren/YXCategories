@@ -75,7 +75,7 @@
     self.defultUserInteractionEnabled = self.userInteractionEnabled;
     self.userInteractionEnabled = true;
     
-    self.tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:@selector(action)];
+    self.tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
     [self addGestureRecognizer:self.tap];
 }
 - (void)removeTapTarget:(id)target action:(SEL)action

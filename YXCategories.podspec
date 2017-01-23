@@ -1,11 +1,11 @@
 
 Pod::Spec.new do |s|
   s.name         = "YXCategories"
-  s.version      = "1.5.8"
+  s.version      = "1.5.9"
   s.summary      = "自己使用的分类"
   s.homepage     = "https://github.com/shlyren/YXCategories"
   s.license      = "MIT"
-  s.author       = { "shlyren" => "shlyren@163.com" }
+  s.author       = { "shlyren" => "mail@yuxiang.ren" }
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/shlyren/YXCategories.git", :tag => "#{s.version}" }
 
